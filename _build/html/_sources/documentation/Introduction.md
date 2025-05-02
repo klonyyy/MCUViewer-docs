@@ -2,7 +2,6 @@
 
 MCUViewer is a non-intrusive GUI debug tool for microcontrollers which allows to quickly visualize values of variables.
 
-
 ## Downloads
 
 MCUViewer can be downloaded from the [website]("XXX"). 
@@ -86,58 +85,6 @@ MCUViewer is distributed under EULA License. The license is available in:
 * Linux -> /usr/local/MCUViewer
 * MacOS -> Applications/MCUViewer/Contents/Resources
   
-
-## Variable Viewer
-
-Variable Viewer window consists of four main parts:
-
-1. Variable table - imported variables will show up here
-2. Plot group tree - list of all groups and plots
-3. Plot Settings - settings for currently selected plot
-4. Plot canvas - plots are drawn here
-
-![alt text](VarViewer.png)
-
-### Variable table
-
-There are two ways of adding variables to the table:
-* Click the import variables button and select the variables from your project.
-* Right click in the variable table area and select New->Variable. Set the name manually and close the window. This option can be used if your variable is not listed in the import dialog.
-  
-![alt text](image.png)
-
-You can see each varaible's settings by double clicking it or by right clicking and selecting Properties.
-
-
-
-
-
-### Plots 
-
-
-
-
-## FAQ 
-
-### Variable Viewer
-
-1. *My variable is not listed in the import dialog.*
-
-Make sure the *.elf file is correct, and check the type of your variable - if it's a pointer it won't be detected. You can try making a new variable by right clicking in the variable table area and selecting New->Variable. Set the name manually and close the window. If the variable is detected the address will change from "NOT FOUND!" to a valid address.
-
-2. *I'm using JLink probe and my target resets each time I start the acquisition.*
-
-Make sure that the JLink probe SWD speed is not set to a too high value. Try lower speeds and make sure the "keep connection" from Acquisition window is checked.
-
-2. *I'm using JLink probe and my target seems to halt for a few milliseconds each time I start the acquisition.*
-   
-Try selecting a generic device (eg. Cortex-M4 instead of STM32G474) and make sure the "keep connection" from Acquisition window is checked.
-
-3. *The sampling frequency set in the Acquisition window is not reached.* 
-
-If possible try selecting a higher SWD speed. If that's not possbile you can lower the sampling frequency or switch to a recorder module for high-frequency singnals. 
-   
-
 
 
 

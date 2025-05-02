@@ -1,0 +1,4 @@
+/* Hide vertical scrollbar in left sidebar */
+.bd-sidebar {
+    overflow-y: hidden !important;
+}

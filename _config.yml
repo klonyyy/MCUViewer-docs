@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: MCUViewer
-author: Piotr Wasilewski
+author: TS Piotr Wasilewski
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -21,3 +21,5 @@ repository:
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
+html:
+  pygments_style: monokai
