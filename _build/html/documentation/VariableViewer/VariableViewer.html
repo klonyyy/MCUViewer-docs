@@ -331,7 +331,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-table">Variable table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-panel">Control panel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-table">Variable table</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-not-found-in-import-window">Variable not found in import window</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-point-variable">Fixed point variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-bits">Error bits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-group-tree">Plot group tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-settings">Plot settings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cursors">Cursors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-window">Statistics window</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-variable-list">Plot variable list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-to-csv">Export to *.csv</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-canvas">Plot canvas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-plot">Table plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curve-plot">Curve plot</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -345,19 +364,34 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="variable-viewer">
 <h1>Variable Viewer<a class="headerlink" href="#variable-viewer" title="Link to this heading">#</a></h1>
-<p>Variable Viewer window consists of four main parts:</p>
+<p>Variable Viewer module allows to visualize values of variables in real time. It uses the debug probe to sample memory under addresses read from *.elf file of your project. It’s quick to set up and almost non-intrusive way of accessing MCU data. Variable Viewer module allows to both read and write variables values in realtime.</p>
+<p>Variable Viewer window consists of five main parts:</p>
 <ol class="arabic simple">
-<li><p>Variable table - imported variables will show up here</p></li>
-<li><p>Plot group tree - list of all groups and plots</p></li>
-<li><p>Plot Settings - settings for currently selected plot</p></li>
-<li><p>Plot canvas - plots are drawn here</p></li>
+<li><p><a class="reference internal" href="#controlpanel"><span class="std std-ref">Control panel</span></a> - main control panel</p></li>
+<li><p><a class="reference internal" href="#variabletable"><span class="std std-ref">Variable table</span></a> - imported variables will show up here</p></li>
+<li><p><a class="reference internal" href="#plotgrouptree"><span class="std std-ref">Plot group tree</span></a> - list of all groups and plots</p></li>
+<li><p><a class="reference internal" href="#plotsettings"><span class="std std-ref">Plot settings</span></a> - settings for currently selected plot</p></li>
+<li><p><a class="reference internal" href="#plotcanvas"><span class="std std-ref">Plot canvas</span></a> - plots are drawn here</p></li>
 </ol>
 <figure class="align-center">
 <a class="reference internal image-reference" href="../../_images/VarViewer.png"><img alt="../../_images/VarViewer.png" src="../../_images/VarViewer.png" style="width: 1000px;" />
 </a>
 </figure>
+<section id="control-panel">
+<span id="controlpanel"></span><h2>Control panel<a class="headerlink" href="#control-panel" title="Link to this heading">#</a></h2>
+<p>There are three main buttons in the control panel:</p>
+<ol class="arabic simple">
+<li><p>START/STOP button - used to start/stop data acquisition. When error occurs the button will turn red and display the error message when hovered over.</p></li>
+<li><p>import variables button - used to import variables from your project and add them to the variable table</p></li>
+<li><p>refresh addresses - used to refresh addresses of imported variables in case automatic refresh did not succeed</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When “refresh on *.elf change” in <a class="reference internal" href="#Acquisition"><span class="xref myst">Acquisition</span></a> window is checked the refresh button will be automatically pressed when the *.elf file is changed.</p>
+</div>
+</section>
 <section id="variable-table">
-<h2>Variable table<a class="headerlink" href="#variable-table" title="Link to this heading">#</a></h2>
+<span id="variabletable"></span><h2>Variable table<a class="headerlink" href="#variable-table" title="Link to this heading">#</a></h2>
 <p>There are two ways of adding variables to the table:</p>
 <ol class="arabic simple">
 <li><p>Click the import variables button and select the variables from your project.</p></li>
@@ -368,6 +402,149 @@ document.write(`
 </a>
 </figure>
 <p>You can see each variable’s settings by double clicking it or by right clicking and selecting Properties.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/VariableProperties.png"><img alt="../../_images/VariableProperties.png" src="../../_images/VariableProperties.png" style="width: 1000px;" />
+</a>
+</figure>
+<p>Generally the default settings are usually sufficient. However there are some cases when some modifications are necesarry.</p>
+<section id="variable-not-found-in-import-window">
+<h3>Variable not found in import window<a class="headerlink" href="#variable-not-found-in-import-window" title="Link to this heading">#</a></h3>
+<p>Sometimes the import window is not able to detect some variables with more convoluted type. In such cases you can use the <code class="docutils literal notranslate"><span class="pre">New-&gt;Variable</span></code> option to add the variable manually. Then by changing the Name field the variable should be detected correctly when the window is closed</p>
+</section>
+<section id="fixed-point-variable">
+<h3>Fixed point variable<a class="headerlink" href="#fixed-point-variable" title="Link to this heading">#</a></h3>
+<p>MCUViewer is able to interpret fixed point variables. To do so make sure the original variable is imported. You can either copy the original and modify the copy or modify the original directly.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Right now interpreted variables cannot be easily distinguished from original variables - this is why it’s recommended to copy the original variable and add a postfix to the copied variable name, eg. “_FR” to idicate a fractional variable.</p>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/Fractional.png"><img alt="../../_images/Fractional.png" src="../../_images/Fractional.png" style="width: 1000px;" />
+</a>
+</figure>
+<ol class="arabic simple">
+<li><p>Copy the original variable (right click -&gt; copy). Add “_FR” to the copied variable name.</p></li>
+<li><p>Select “Specify tracked name” setting</p></li>
+<li><p>Select the original variable in the “Tracked name” field</p></li>
+<li><p>Select the fixed point interpretation option (signed or unsigned)</p></li>
+<li><p>Set the number of fractional bits (depends on the detected type)</p></li>
+<li><p>Either type a numeric base (scaling factor) or select a variable that holds it. This is useful when you’d like to represent physical values in the plot.</p></li>
+</ol>
+</section>
+<section id="error-bits">
+<h3>Error bits<a class="headerlink" href="#error-bits" title="Link to this heading">#</a></h3>
+<p>Error bits can be easily extracted from an error word variable using the “Postprocessing” tab.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/ErrorBits.png"><img alt="../../_images/ErrorBits.png" src="../../_images/ErrorBits.png" style="width: 1000px;" />
+</a>
+</figure>
+<ol class="arabic simple">
+<li><p>Add a new variable (right click -&gt; New-&gt;Variable)</p></li>
+<li><p>Select “Specify tracked name” setting and select the error word variable</p></li>
+<li><p>In the “Postprocessing” tab select the number of right shifts (position of the bit)</p></li>
+<li><p>Set the mask to 0x1 to cut only the last bit.</p></li>
+</ol>
+<p>After that the variable should be set to one when the bit is set, and zero when it’s cleared.</p>
+</section>
+</section>
+<section id="plot-group-tree">
+<span id="plotgrouptree"></span><h2>Plot group tree<a class="headerlink" href="#plot-group-tree" title="Link to this heading">#</a></h2>
+<p>Plot group tree holds all groups and plots. Each group can contain multiple plots. There are two types of groups:</p>
+<ol class="arabic simple">
+<li><p>Sampling group - plots in this group are being sampled with sampling frequency set in the Acquisition window. It allows to take longer time series recordings, however it’s not recommended for high speed signals as they can get distorted since the sampling frequency is not synchronized to the signal frequency.</p></li>
+<li><p>Recorder group - curve plots in this group are displayed from the recorder’s buffer. The recorder allows to display high frequency data without distortion. Please see <a class="reference internal" href="#../Recorder/Recorder.md"><span class="xref myst">recorder setup</span></a> for more details.</p></li>
+</ol>
+<p>To add a new group simply right click in the plot group tree area and select <code class="docutils literal notranslate"><span class="pre">New-&gt;Sampling</span> <span class="pre">group</span></code> or <code class="docutils literal notranslate"><span class="pre">New-&gt;Recorder</span> <span class="pre">group</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The recorder group can only be added if the recorder module is detected. Please see <a class="reference internal" href="#../Recorder/Recorder.md"><span class="xref myst">recorder setup</span></a> for more details.</p>
+</div>
+<p>To add a plot to a group right click on a group and select <code class="docutils literal notranslate"><span class="pre">New-&gt;Plot</span></code>.</p>
+<p>Plot settings can be accessed by double clicking it’s name or by right clicking and selecting Properties.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/PlotSettings.png"><img alt="../../_images/PlotSettings.png" src="../../_images/PlotSettings.png" style="width: 1000px;" />
+</a>
+</figure>
+<p>By default the plot is of type curve, hovewer there are four types available:</p>
+<ol class="arabic simple">
+<li><p>Curve - regular time based plot</p></li>
+<li><p>Bar - bar plot</p></li>
+<li><p>Table - table plot, also used to write values</p></li>
+<li><p>XY - Curve plot with selectable X and Y axes</p></li>
+</ol>
+<p>When new plots are added they are empty. One can drag and drop the variables from variable table to add them to the plot area.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/DragNDrop.png"><img alt="../../_images/DragNDrop.png" src="../../_images/DragNDrop.png" style="width: 1000px;" />
+</a>
+</figure>
+</section>
+<section id="plot-settings">
+<span id="plotsettings"></span><h2>Plot settings<a class="headerlink" href="#plot-settings" title="Link to this heading">#</a></h2>
+<p>Plot settings window is a separate window that holds all the settings for currently selected plot. It might look differently based on the group type. This window allows to turn on cursors, statistics window, and manipulate the plot variable list.</p>
+<section id="cursors">
+<h3>Cursors<a class="headerlink" href="#cursors" title="Link to this heading">#</a></h3>
+<p>Cursors allow to measure signal properties like on an oscilloscope.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/Cursors.png"><img alt="../../_images/Cursors.png" src="../../_images/Cursors.png" style="width: 1000px;" />
+</a>
+</figure>
+<ol class="arabic simple">
+<li><p>Turn on cursors</p></li>
+<li><p>Drag the X0 or X1 cursor</p></li>
+<li><p>The results are shown close to the X1 cursor</p></li>
+<li><p>The values ov variables are displayed in the legend. These are the Y-axis values at X0 cursor position.</p></li>
+</ol>
+</section>
+<section id="statistics-window">
+<h3>Statistics window<a class="headerlink" href="#statistics-window" title="Link to this heading">#</a></h3>
+<p>Statistics window allows to display statistics for the currently selected plot.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/Statistics.png"><img alt="../../_images/Statistics.png" src="../../_images/Statistics.png" style="width: 1000px;" />
+</a>
+</figure>
+<ol class="arabic simple">
+<li><p>Turn on statistics window</p></li>
+<li><p>Select the series to be analyzed</p></li>
+<li><p>Select range to pick a subset of data</p></li>
+<li><p>Drag the ends of the range to modify it</p></li>
+</ol>
+</section>
+<section id="plot-variable-list">
+<h3>Plot variable list<a class="headerlink" href="#plot-variable-list" title="Link to this heading">#</a></h3>
+<p>Plot variable list allows to add/remove variables from the plot. Right click to remove a varaible from the plot. Check/uncheck to include/exclude the variable from the plot.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ticking the checkbox next to a variable will remove it from the sampling list only after restart. During acquisition it can be used to hide a particular series.</p>
+</div>
+</section>
+<section id="export-to-csv">
+<h3>Export to *.csv<a class="headerlink" href="#export-to-csv" title="Link to this heading">#</a></h3>
+<p>Click to export to *.csv - the data is exported as a table of all series from the selected plot.</p>
+</section>
+</section>
+<section id="plot-canvas">
+<span id="plotcanvas"></span><h2>Plot canvas<a class="headerlink" href="#plot-canvas" title="Link to this heading">#</a></h2>
+<p>Plot canvas is where all plots are drawn.</p>
+<section id="table-plot">
+<h3>Table plot<a class="headerlink" href="#table-plot" title="Link to this heading">#</a></h3>
+<p>Table plot type can be used to read (1) and write (2) a variable value. Right clicking on the read field (1) allows to change the display format to hexadecimal, or binary.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/WriteValue.png"><img alt="../../_images/WriteValue.png" src="../../_images/WriteValue.png" style="width: 1000px;" />
+</a>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>New variable value can be written when the write field is focused and enter key is pressed, or when the write button is clicked. When the field looses focus it will not be written.</p>
+</div>
+</section>
+<section id="curve-plot">
+<h3>Curve plot<a class="headerlink" href="#curve-plot" title="Link to this heading">#</a></h3>
+<p>Curve plot manipulation is done using mouse - drag to pan, scroll to zoom, right click to open context menu. Right click and drag allows to select a zoom window. Double left click adjusts the scale to fit the data.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Zooming and dragging is not possible during the acquisition.</p>
+</div>
+</section>
 </section>
 </section>
 
@@ -435,7 +612,26 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-table">Variable table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-panel">Control panel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-table">Variable table</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-not-found-in-import-window">Variable not found in import window</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-point-variable">Fixed point variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-bits">Error bits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-group-tree">Plot group tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-settings">Plot settings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cursors">Cursors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-window">Statistics window</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-variable-list">Plot variable list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-to-csv">Export to *.csv</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-canvas">Plot canvas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-plot">Table plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curve-plot">Curve plot</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
