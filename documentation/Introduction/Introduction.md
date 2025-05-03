@@ -22,7 +22,7 @@ Download the *.deb package and install it using:
 
 ### MacOS
 
-Download the *.dmg package. Open it and drag and drop the MCUViewer app to Applications folder.
+Download the *.dmg package. Open it and drag and drop the MCUViewer app to Applications folder. If the application does not run due to unverified source, make sure to allow it in the security preferences.
 
 
 ## Quick Start - Variable Viewer
