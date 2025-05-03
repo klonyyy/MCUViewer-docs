@@ -9,8 +9,8 @@ Trace Viewer is available on cores that support SWO. Cortex-M0 and Cortex-M0+ ar
 
 Trace Viewer window consists of four main parts:
 
-1. [Control panel](ControlPanel) - main control panel.
-2. [Indicators](Inticators) - trace status and error indicators.
+1. [Control panel](ControlPanelTrace) - main control panel.
+2. [Indicators](Indicators) - trace status and error indicators.
 3. [Channels list and settings](Channels) - list of all channels and quick-access settings.
 4. [Channels canvas](ChannelsCanvas) - plots are drawn here.
 
