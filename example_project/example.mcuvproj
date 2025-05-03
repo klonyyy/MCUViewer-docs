@@ -19,22 +19,22 @@ probe_sn = 506003225
 should_log = false
 log_directory = 
 gdb_command = ./gdb
-recorder_enabled = false
+recorder_enabled = true
 restart_on_group_change = true
 keep_connection = true
 
 [trace_settings]
-core_frequency = 160000
+core_frequency = 150000
 trace_prescaler = 10
 max_points = 10000
 max_viewport_points_percent = 10
 trigger_channel = -1
 trigger_level = 0.900000
 timeout = 2
-probe_type = 0
-target_name = 
+probe_type = 1
+target_name = STM32G474CB
 probe_speed_khz = 10000
-probe_sn = 
+probe_sn = 506003225
 should_log = false
 log_directory = 
 
@@ -203,39 +203,56 @@ visibility = true
 format = DEC
 
 [group0-plot1]
-name = new plot0
-type = 3
-visibility = true
-x_axis_variable = 
-
-[group0-plot2]
 name = test
 type = 0
 visibility = true
 
-[group0-plot2-series0]
+[group0-plot1-series0]
 name = test.a
 visibility = true
 format = DEC
 
-[group0-plot2-series1]
+[group0-plot1-series1]
 name = test.b
 visibility = true
 format = DEC
 
-[group0-plot2-series2]
+[group0-plot1-series2]
 name = test.c
 visibility = true
 format = DEC
 
+[group0-plot2]
+name = test1
+type = 3
+visibility = false
+x_axis_variable = 
+
 [group1]
-name = new sampling group0
-acquisition_type = 0
+name = new recorder group0
+acquisition_type = 1
+mode = 2
+skipped_samples = 0
+trigger_enabled = true
+trigger_source_var = test.a
+trigger_edge = 0
+trigger_value = 0.192519
+trigger_pretrigger_samples = 1259
 
 [group1-plot0]
 name = new plot0
 type = 0
 visibility = true
+
+[group1-plot0-series0]
+name = test.a
+visibility = true
+format = DEC
+
+[group1-plot0-series1]
+name = test.b
+visibility = true
+format = DEC
 
 [trace_plot0]
 name = CH0
@@ -258,41 +275,41 @@ domain = 1
 [trace_plot3]
 name = CH3
 alias = CH3
-visibility = true
+visibility = false
 domain = 1
 
 [trace_plot4]
 name = CH4
 alias = CH4
-visibility = true
+visibility = false
 domain = 1
 
 [trace_plot5]
 name = CH5
 alias = CH5
-visibility = true
+visibility = false
 domain = 1
 
 [trace_plot6]
 name = CH6
 alias = CH6
-visibility = true
+visibility = false
 domain = 1
 
 [trace_plot7]
 name = CH7
 alias = CH7
-visibility = true
+visibility = false
 domain = 1
 
 [trace_plot8]
 name = CH8
 alias = CH8
-visibility = true
+visibility = false
 domain = 1
 
 [trace_plot9]
 name = CH9
 alias = CH9
-visibility = true
+visibility = false
 domain = 1

@@ -1,19 +1,19 @@
-# MCUViewer 
+# Introduction 
 
 MCUViewer is a non-intrusive GUI debug tool for microcontrollers which allows to quickly visualize values of variables.
 
 ## Downloads
 
-MCUViewer can be downloaded from the [website](https://mcuviewer.com). 
+MCUViewer can be downloaded from the [MCUViewer website](https://mcuviewer.com). TODO: fix link
 
 ## Installation
 
 ### Windows
 
-On Windows MCUViewer can be either installed or unpacked. Unpacking might be prefereable in some cases as it does not require admin rights. 
+On Windows MCUViewer can be either installed or unpacked. Unpacking might be preferable in some cases as it does not require admin rights. 
 
 * Installing - download the *.zip file, unpack it, and double click the installer. Follow the instructions.
-* Unpacking - download the *.zip file, unpack it, and unpack the installer once again. Copy the unpacked folders to a prefered location. Run by double clicking the `MCUViewer.exe` file from bin directory. 
+* Unpacking - download the *.zip file, unpack it, and unpack the installer once again. Copy the unpacked folders to a preferred location. Run by double clicking the `MCUViewer.exe` file from bin directory. 
 
 ### Linux
 
@@ -27,30 +27,40 @@ Download the *.dmg package. Open it and drag and drop the MCUViewer app to Appli
 
 ## Quick Start - Variable Viewer
 
-![alt text](images/VarViewer_white.png)
+```{figure} ./images/VarViewerWhite.png
+:width: 1000px
+:align: center
+```
 
-Variable viewer module samples the selected variables addresses in regular time intervals - it's generally well suited for medium frequency signals as the sampling rate is limited by SWD speed and type of probe that is used. If high speed readout is needed please refer to the [Recorder](#recorder) section, or try the SWO-based Trace Viewer. 
+Variable viewer module samples the selected variables addresses in regular time intervals - it's generally well suited for medium frequency signals as the sampling rate is limited by SWD speed and type of probe that is used. If high speed readout is needed please refer to the {ref}`Recorder` section, or try the SWO-based Trace Viewer.
 
-1. Select *.elf file of your project in Options->Acquisition
-2. Select the debug probe
-3. Close the Options -> Acquisition window and click import variables button. 
-4. Select variables you'd like to visualize and click import
-5. Now drag and drop the variables onto the plot canvas
-6. Click the large "STOPPED" button to begin acquisition
+Your target should be connected to the debug probe using SWDIO, SWCLK, and GND pins.
 
-In case of any errors make sure to follow the instructions and visit FAQ.
+1. Select *.elf file of your project in `Options->Acquisition`.
+2. Select the debug probe.
+3. Close the `Options->Acquisition` window and click `Import variables` button. 
+4. Select variables you'd like to visualize and click import.
+5. Now drag and drop the variables onto the plot canvas.
+6. Click the large `STOPPED` button to begin acquisition.
+
+In case of any errors make sure to follow the instructions and visit {ref}`FAQVariableViewer`
 
 
 ## Quick Start - Trace Viewer
 
-![alt text](images/TraceViewer_white.png)
+```{figure} ./images/TraceViewerWhite.png
+:width: 1000px
+:align: center
+```
 
 Trace Viewer module parses SWO trace data an displays the results in the form of plots. It is possible to visualize high speed signals with minimum overhead, as well as digital plots to visualize/profile interrupt execution.
 
-1. Switch to Trace Viewer tab
-2. Select the debug probe in Options->Acquisition, close the window
-3. Type in your core frequency in kHz
-4. Select trace prescaller - start with a rather high value (~20) as it largely depends on your debug probe and SWD setup
+Your target should be connected to the debug probe using SWDIO, SWCLK, **SWO**, and GND pins.
+
+1. Switch to Trace Viewer tab.
+2. Select the debug probe in `Options->Acquisition`, close the window.
+3. Type in your core frequency in kHz in the main window.
+4. Select trace prescaler - start with a rather high value (~20) as it largely depends on your debug probe and SWD setup.
 5. In your code place special markers: 
 
 Example for digital data: 
@@ -73,9 +83,9 @@ ITM->PORT[x].u16 = a;
 
 where x is the channel number in MCUViewer.
 
-6. Click the large "STOPPED" button to begin acquisition
+6. Click the large `STOPPED` button to begin acquisition
 
-
+In case of any errors make sure to follow the instructions and visit {ref}`FAQTraceViewer`
 
 ## License
 

@@ -26,7 +26,7 @@ There are three main buttons in the control panel:
 3. Refresh addresses - used to refresh addresses of imported variables in case automatic refresh did not succeed 
 
 ```{note}
-When "refresh on *.elf change" in [Acquisition](Acquisition) window is checked the refresh button will be automatically pressed when the *.elf file is changed.
+When "refresh on *.elf change" in {ref}`AcquisitionSettings` window is checked the refresh button will be automatically pressed when the *.elf file is changed.
 ```
 
 (VariableTable)=
@@ -50,18 +50,39 @@ You can see each variable's settings by double clicking it or by right clicking 
 :align: center
 ```
 
-Generally the default settings are usually sufficient. However there are some cases when some modifications are necesarry. 
+Generally the default settings are usually sufficient. However there are some cases when some modifications are necessary. 
 
-### Variable not found in import window
+### General section - manual variable import
 
-Sometimes the import window is not able to detect some variables with more convoluted type. In such cases you can use the `New->Variable` option to add the variable manually. Then by changing the Name field the variable should be detected correctly when the window is closed
+Sometimes the import window is not able to detect some variables with more convoluted type. In such cases you can use the `New->Variable` option to add the variable manually. Then, by changing the `Name` field the variable should be detected correctly when the window is closed, or `Refresh addresses` button is clicked. 
 
-### Fixed point variable
+### General section - custom address
+
+In some cases it might be needed to read a predefined address for example in the register area. This can be done by creating a new variable, and unchecking the `Update from *.elf` checkbox. Then set the address and type can be set manually. Later on, to extract certain bits the `Postprocessing` section can be used".
+
+### Postprocessing section - error bits
+
+The `Postprocessing` tab can be used to extract certain bits from a variable. This is useful, for example, when reading error flags.
+
+```{figure} ./images/ErrorBits.png
+:width: 1000px
+:align: center
+```
+
+1. Add a new variable (right click -> New->Variable)
+2. Select `Specify tracked name` setting and select the error word variable
+3. In the `Postprocessing` tab select the number of right shifts (position of the bit)
+4. Set the mask to 0x1 to select only the least significant bit.
+
+After that the variable should be set to one when the bit is set, and zero when it's cleared. 
+
+
+### Interpretation section - fixed point variables
 
 MCUViewer is able to interpret fixed point variables. To do so make sure the original variable is imported. You can either copy the original and modify the copy or modify the original directly. 
 
 ```{note}
-Right now interpreted variables cannot be easily distinguished from original variables - this is why it's recommended to copy the original variable and add a postfix to the copied variable name, eg. "_FR" to idicate a fractional variable. 
+Right now interpreted variables cannot be easily distinguished from original variables - this is why it's recommended to copy the original variable and add a postfix to the copied variable name, eg. "_FR" to indicate a fractional variable. 
 ```
 
 ```{figure} ./images/Fractional.png
@@ -76,22 +97,6 @@ Right now interpreted variables cannot be easily distinguished from original var
 6. Either type a numeric base (scaling factor) or select a variable that holds it. This is useful when you'd like to represent physical values in the plot.
 
 
-### Error bits
-
-Error bits can be easily extracted from an error word variable using the "Postprocessing" tab. 
-
-```{figure} ./images/ErrorBits.png
-:width: 1000px
-:align: center
-```
-
-1. Add a new variable (right click -> New->Variable)
-2. Select "Specify tracked name" setting and select the error word variable
-3. In the "Postprocessing" tab select the number of right shifts (position of the bit)
-4. Set the mask to 0x1 to cut only the last bit.
-
-After that the variable should be set to one when the bit is set, and zero when it's cleared. 
-
 
 (PlotGroupTree)=
 ## Plot group tree
@@ -100,12 +105,12 @@ Plot group tree holds all groups and plots. Each group can contain multiple plot
 
 1. Sampling group - plots in this group are being sampled with sampling frequency set in the Acquisition window. It allows to take longer time series recordings, however it's not recommended for high speed signals as they can get distorted since the sampling frequency is not synchronized to the signal frequency.
 
-2. Recorder group - curve plots in this group are displayed from the recorder's buffer. The recorder allows to display high frequency data without distortion. Please see [recorder setup](../Recorder/Recorder.md) for more details.
+2. Recorder group - curve plots in this group are displayed from the recorder's buffer. The recorder allows to display high frequency data without distortion. Please see {ref}`Recorder` for more details.
 
 To add a new group simply right click in the plot group tree area and select `New->Sampling group` or `New->Recorder group`. 
 
 ```{note}
-The recorder group can only be added if the recorder module is detected. Please see [recorder setup](../Recorder/Recorder.md) for more details.
+The recorder group can only be added if the recorder module is detected. Please see {ref}`Recorder` for more details.
 ```
 
 To add a plot to a group right click on a group and select `New->Plot`.
@@ -117,7 +122,7 @@ Plot settings can be accessed by double clicking it's name or by right clicking 
 :align: center
 ```
 
-By default the plot is of type curve, hovewer there are four types available: 
+By default the plot is of type curve, however there are four types available: 
 
 1. Curve - regular time based plot
 2. Bar - bar plot
@@ -133,7 +138,7 @@ When new plots are added they are empty. One can drag and drop the variables fro
 (PlotSettings)=
 ## Plot settings
 
-Plot settings window is a separate window that holds all the settings for currently selected plot. It might look differently based on the group type. This window allows to turn on cursors, statistics window, and manipulate the plot variable list. 
+Plot settings window is a sub-window that holds quick-access settings for currently selected plot. It might look differently based on the group type (Recorder/Sampling). This window allows to turn on cursors, statistics window, and manipulate the plot variable list. 
 
 ### Cursors
 
@@ -165,7 +170,7 @@ Statistics window allows to display statistics for the currently selected plot.
 
 ### Plot variable list
 
-Plot variable list allows to add/remove variables from the plot. Right click to remove a varaible from the plot. Check/uncheck to include/exclude the variable from the plot.
+Plot variable list allows to add/remove variables from the plot. Right click to remove a variable from the plot. Check/uncheck to include/exclude the variable from the plot.
 
 ```{note}
 Ticking the checkbox next to a variable will remove it from the sampling list only after restart. During acquisition it can be used to hide a particular series.
