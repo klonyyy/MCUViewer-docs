@@ -22,8 +22,8 @@ Variable Viewer window consists of five main parts:
 There are three main buttons in the control panel:
 
 1. START/STOP button - used to start/stop data acquisition. When error occurs the button will turn red and display the error message when hovered over.
-2. import variables button - used to import variables from your project and add them to the variable table
-3. refresh addresses - used to refresh addresses of imported variables in case automatic refresh did not succeed 
+2. Import variables button - used to import variables from your project and add them to the variable table
+3. Refresh addresses - used to refresh addresses of imported variables in case automatic refresh did not succeed 
 
 ```{note}
 When "refresh on *.elf change" in [Acquisition](Acquisition) window is checked the refresh button will be automatically pressed when the *.elf file is changed.
@@ -31,6 +31,8 @@ When "refresh on *.elf change" in [Acquisition](Acquisition) window is checked t
 
 (VariableTable)=
 ## Variable table 
+
+Variable table holds all variables 
 
 There are two ways of adding variables to the table:
 1. Click the import variables button and select the variables from your project.
