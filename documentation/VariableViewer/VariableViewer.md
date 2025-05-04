@@ -1,7 +1,7 @@
-
+(VariableViewer)=
 # Variable Viewer
 
-Variable Viewer module allows to visualize values of variables in real time. It uses the debug probe to sample memory under addresses read from *.elf file of your project. It's quick to set up and almost non-intrusive way of accessing MCU data. Variable Viewer module allows to both read and write variables values in realtime. 
+The Variable Viewer module allows you to visualize the values of variables in real time. It uses the debug probe to sample memory at addresses read from the `*.elf` file of your project. It is quick to set up and provides an almost non-intrusive way of accessing MCU data. The Variable Viewer module allows you to both read and write variable values in real time.
 
 Variable Viewer window consists of five main parts:
 
@@ -21,22 +21,24 @@ Variable Viewer window consists of five main parts:
 
 There are three main buttons in the control panel:
 
-1. START/STOP button - used to start/stop data acquisition. When error occurs the button will turn red and display the error message when hovered over.
-2. Import variables button - used to import variables from your project and add them to the variable table
-3. Refresh addresses - used to refresh addresses of imported variables in case automatic refresh did not succeed 
+1. **START/STOP** button – used to start/stop data acquisition. When an error occurs, the button will turn red and display the error message when hovered over.
+2. **Import Variables** button – used to import variables from your project and add them to the variable table.
+3. **Refresh Addresses** button – used to refresh the addresses of imported variables in case the automatic refresh did not succeed.
 
 ```{note}
-When "refresh on *.elf change" in {ref}`AcquisitionSettings` window is checked the refresh button will be automatically pressed when the *.elf file is changed.
+When `Refresh on *.elf change` in {ref}`AcquisitionSettings` window is checked the refresh button will be automatically pressed when the *.elf file is changed.
 ```
 
 (VariableTable)=
 ## Variable table 
 
-Variable table holds all variables 
+The variable table holds all the variables.
 
-There are two ways of adding variables to the table:
-1. Click the import variables button and select the variables from your project.
-2. Right click in the variable table area and select `New->Variable`. Set the name manually and close the window. This option can be used if your variable is not listed in the import dialog.
+There are two ways to add variables to the table:
+
+1. Click the `Import Variables` button and select the variables from your project.
+2. Right-click in the variable table area and select `New -> Variable`. Set the name manually and close the window. This option can be used if your variable is not listed in the import dialog.
+
   
 ```{figure} ./images/AddVariable.png
 :width: 1000px
@@ -50,84 +52,82 @@ You can see each variable's settings by double clicking it or by right clicking 
 :align: center
 ```
 
-Generally the default settings are usually sufficient. However there are some cases when some modifications are necessary. 
+Generally, the default settings are sufficient. However, there are cases when modifications are necessary.
 
 ### General section - manual variable import
 
-Sometimes the import window is not able to detect some variables with more convoluted type. In such cases you can use the `New->Variable` option to add the variable manually. Then, by changing the `Name` field the variable should be detected correctly when the window is closed, or `Refresh addresses` button is clicked. 
+Sometimes, the import window may not detect variables with more complex types. In such cases, you can use the `New -> Variable` option to add the variable manually. Then, by changing the `Name` field, the variable should be detected correctly when the window is closed or when the `Refresh Addresses` button is clicked. 
 
 ### General section - custom address
 
-In some cases it might be needed to read a predefined address for example in the register area. This can be done by creating a new variable, and unchecking the `Update from *.elf` checkbox. Then set the address and type can be set manually. Later on, to extract certain bits the `Postprocessing` section can be used".
+In some cases, it may be necessary to read a predefined address, for example, in the register area. This can be done by creating a new variable and unchecking the `Update from *.elf` checkbox. Then, the address and type can be set manually. Later on, to extract certain bits, the `Postprocessing` section can be used.
 
 ### Postprocessing section - error bits
 
-The `Postprocessing` tab can be used to extract certain bits from a variable. This is useful, for example, when reading error flags.
+The `Postprocessing` tab can be used to extract specific bits from a variable. This is useful, for example, when reading error flags.
 
 ```{figure} ./images/ErrorBits.png
 :width: 1000px
 :align: center
 ```
 
-1. Add a new variable (right click -> New->Variable)
-2. Select `Specify tracked name` setting and select the error word variable
-3. In the `Postprocessing` tab select the number of right shifts (position of the bit)
-4. Set the mask to 0x1 to select only the least significant bit.
+1. Add a new variable (right-click -> `New -> Variable`).
+2. Select the `Specify tracked name` setting and choose the error word variable.
+3. In the `Postprocessing` tab, select the number of right shifts (position of the bit).
+4. Set the mask to `0x1` to select only the least significant bit.
 
-After that the variable should be set to one when the bit is set, and zero when it's cleared. 
-
+After that, the variable should be set to one when the bit is set and zero when it's cleared.
 
 ### Interpretation section - fixed point variables
 
-MCUViewer is able to interpret fixed point variables. To do so make sure the original variable is imported. You can either copy the original and modify the copy or modify the original directly. 
+MCUViewer is able to interpret fixed-point variables. To do so, make sure the original variable is imported. You can either copy the original and modify the copy, or modify the original directly.
 
 ```{note}
-Right now interpreted variables cannot be easily distinguished from original variables - this is why it's recommended to copy the original variable and add a postfix to the copied variable name, eg. "_FR" to indicate a fractional variable. 
+Right now, interpreted variables cannot be easily distinguished from the original variables. This is why it's recommended to copy the original variable and add a postfix to the copied variable name, e.g., "_FR" to indicate a fractional variable.
 ```
 
 ```{figure} ./images/Fractional.png
 :width: 1000px
 :align: center
 ```
-1. Copy the original variable (right click -> copy). Add "_FR" to the copied variable name.
-2. Select "Specify tracked name" setting
-3. Select the original variable in the "Tracked name" field
-4. Select the fixed point interpretation option (signed or unsigned)
-5. Set the number of fractional bits (depends on the detected type)
+1. Copy the original variable (right-click -> `Copy`). Add "_FR" to the copied variable name.
+2. Select the `Specify tracked name` setting.
+3. Select the original variable in the `Tracked name` field.
+4. Select the fixed-point interpretation option (signed or unsigned).
+5. Set the number of fractional bits (depends on the detected type).
 6. Either type a numeric base (scaling factor) or select a variable that holds it. This is useful when you'd like to represent physical values in the plot.
-
 
 
 (PlotGroupTree)=
 ## Plot group tree
 
-Plot group tree holds all groups and plots. Each group can contain multiple plots. There are two types of groups: 
+The plot group tree holds all groups and plots. Each group can contain multiple plots. There are two types of groups:
 
-1. Sampling group - plots in this group are being sampled with sampling frequency set in the Acquisition window. It allows to take longer time series recordings, however it's not recommended for high speed signals as they can get distorted since the sampling frequency is not synchronized to the signal frequency.
+1. **Sampling group** – Plots in this group are sampled at the frequency set in the Acquisition window. This allows for recording longer time series. However, it is not recommended for high-speed signals, as they may become distorted due to the lack of synchronization between the sampling frequency and the signal frequency.
 
-2. Recorder group - curve plots in this group are displayed from the recorder's buffer. The recorder allows to display high frequency data without distortion. Please see {ref}`Recorder` for more details.
+2. **Recorder group** – Curve plots in this group are displayed from the recorder’s buffer. The recorder allows high-frequency data to be displayed without distortion. Please see {ref}`Recorder` for more details.
 
-To add a new group simply right click in the plot group tree area and select `New->Sampling group` or `New->Recorder group`. 
+To add a new group simply right click in the plot group tree area and select `New -> Sampling group` or `New -> Recorder group`. 
 
 ```{note}
 The recorder group can only be added if the recorder module is detected. Please see {ref}`Recorder` for more details.
 ```
 
-To add a plot to a group right click on a group and select `New->Plot`.
+To add a plot to a group right click on a group and select `New -> Plot`.
 
-Plot settings can be accessed by double clicking it's name or by right clicking and selecting Properties.
+Plot settings can be accessed by double-clicking its name or by right-clicking and selecting `Properties`.
 
 ```{figure} ./images/PlotSettings.png
 :width: 1000px
 :align: center
 ```
 
-By default the plot is of type curve, however there are four types available: 
+By default, the plot is of type `Curve`; however, there are four types available:
 
-1. Curve - regular time based plot
-2. Bar - bar plot
-3. Table - table plot, also used to write values
-4. XY - Curve plot with selectable X and Y axes
+1. Curve - regular time based plot.
+2. Bar - bar plot.
+3. Table - table plot, also used to write values.
+4. XY - Curve plot with selectable X and Y axes.
 
 When new plots are added they are empty. One can drag and drop the variables from variable table to add them to the plot area. 
 
@@ -138,7 +138,7 @@ When new plots are added they are empty. One can drag and drop the variables fro
 (PlotSettings)=
 ## Plot settings
 
-Plot settings window is a sub-window that holds quick-access settings for currently selected plot. It might look differently based on the group type (Recorder/Sampling). This window allows to turn on cursors, statistics window, and manipulate the plot variable list. 
+The plot settings window is a sub-window that provides quick-access settings for the currently selected plot. Its appearance may vary depending on the group type (Recorder or Sampling). This window allows you to enable cursors, open the statistics window, and manage the plot's variable list.
 
 ### Cursors
 
@@ -149,9 +149,9 @@ Cursors allow to measure signal properties like on an oscilloscope.
 :align: center
 ```
 
-1. Turn on cursors
-2. Drag the X0 or X1 cursor
-3. The results are shown close to the X1 cursor
+1. Turn on cursors.
+2. Drag the X0 or X1 cursor.
+3. The results are shown close to the X1 cursor.
 4. The values ov variables are displayed in the legend. These are the Y-axis values at X0 cursor position. 
 
 ### Statistics window
@@ -163,10 +163,10 @@ Statistics window allows to display statistics for the currently selected plot.
 :align: center
 ```
 
-1. Turn on statistics window
-2. Select the series to be analyzed
-3. Select range to pick a subset of data
-4. Drag the ends of the range to modify it
+1. Turn on statistics window.
+2. Select the series to be analyzed.
+3. Select range to pick a subset of data.
+4. Drag the ends of the range to modify it.
 
 ### Plot variable list
 

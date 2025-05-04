@@ -1,7 +1,7 @@
 (Recorder)= 
 # Recorder 
 
-The recorder module allows visualization of very high-speed signals, even on low-cost targets or when SWD communication speed is limited due to galvanic isolators or long cables. It is more intrusive than using a sampling group, as it must be compiled into your project—although the runtime penalty is usually minimal.
+The recorder module allows visualization of very high-speed signals, even on low-cost targets or when SWD communication speed is limited due to galvanic isolators or long cables. It is more intrusive than using a sampling group, as it must be compiled into your project-although the runtime penalty is usually minimal.
 
 ```{figure} ./images/RecorderDemo.gif
 :width: 1000px
@@ -24,13 +24,14 @@ The recorder module allows visualization of very high-speed signals, even on low
 * Enable the recorder module by ticking the "Recorder" checkbox (1) in the Options->Acquisition window.
 * Click the `Detect recorder` button (2). If it is detected correctly there should be no errors, just a `Recorder detected!` information with all fields filled in as in the `recorderDefines.h` file.
 
-In case of errors please first see the {ref}`FAQRecorder` section.
+In case of errors please first see the {ref}`FAQ` section.
 
 ```{figure} ./images/RecorderSettings.png
 :width: 1000px
 :align: center
 ```
 
+(RecorderUsage)=
 ## Recorder usage
 
 After successful setup it is now possible to add a new recorder group. Proceed to the {ref}`PlotGroupTree` section, right click and select `New->Recorder group`.
