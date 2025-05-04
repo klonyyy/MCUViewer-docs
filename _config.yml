@@ -23,3 +23,4 @@ repository:
 
 html:
   pygments_style: monokai
+  favicon: "_static/favicon.png"

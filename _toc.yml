@@ -5,4 +5,8 @@ format: jb-book
 root: documentation/Introduction/Introduction
 chapters:
 - file: documentation/VariableViewer/VariableViewer
-- file: documentation/FAQ
+- file: documentation/TraceViewer/TraceViewer
+- file: documentation/Recorder/Recorder
+- file: documentation/AcquisitionSettings/AcquisitionSettings
+- file: documentation/GeneralSettings/GeneralSettings
+- file: documentation/FAQ/FAQ
