@@ -1,8 +1,12 @@
 (Recorder)= 
 # Recorder 
 
-The recorder module allows to visualize very high speed signals even on low cost targets or when SWD communication speed is constrained due to galvanic isolators or long cables. It's more intrusive than using a sampling group as it has to be compiled into your project - even though the runtime penalty is usually not that significant. 
+The recorder module allows visualization of very high-speed signals, even on low-cost targets or when SWD communication speed is limited due to galvanic isolators or long cables. It is more intrusive than using a sampling group, as it must be compiled into your project—although the runtime penalty is usually minimal.
 
+```{figure} ./images/RecorderDemo.gif
+:width: 1000px
+:align: center
+```
 
 ## Recorder setup
 

@@ -40,8 +40,9 @@ The debug probe section holds settings for the debug probe. Currently STLink and
 
 ## Recorder section
 
-Recorder settings will be discusses in more detail in {ref}`Recorder setup`.
+Recorder settings will be discusses in more detail in {ref}`Recorder`.
 
+(Logging)=
 ## Logging section
 
 Logging can be used to stream data to a *.csv file in real time. It works by saving all sampled variables in a csv table with a timestamp. A new log file is created on each start in the selected directory. 

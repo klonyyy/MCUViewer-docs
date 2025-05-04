@@ -1,16 +1,21 @@
 # Introduction 
 
-MCUViewer is a non-intrusive GUI debug tool for microcontrollers which allows to quickly visualize values of variables.
+MCUViewer is a non-intrusive GUI debugging tool for microcontrollers that allows quick visualization of variable values in real-time.
+
+```{figure} ./images/VariableViewer.gif
+:width: 1000px
+:align: center
+```
 
 ## Downloads
 
-MCUViewer can be downloaded from the [MCUViewer website](https://mcuviewer.com). TODO: fix link
+MCUViewer can be downloaded from the [MCUViewer website](https://mcuviewer.com/#downloads).
 
 ## Installation
 
 ### Windows
 
-On Windows MCUViewer can be either installed or unpacked. Unpacking might be preferable in some cases as it does not require admin rights. 
+On Windows MCUViewer can be either installed or unpacked (portable version). Unpacking might be preferable in some cases as it does not require admin rights. 
 
 * Installing - download the *.zip file, unpack it, and double click the installer. Follow the instructions.
 * Unpacking - download the *.zip file, unpack it, and unpack the installer once again. Copy the unpacked folders to a preferred location. Run by double clicking the `MCUViewer.exe` file from bin directory. 
@@ -32,18 +37,18 @@ Download the *.dmg package. Open it and drag and drop the MCUViewer app to Appli
 :align: center
 ```
 
-Variable viewer module samples the selected variables addresses in regular time intervals - it's generally well suited for medium frequency signals as the sampling rate is limited by SWD speed and type of probe that is used. If high speed readout is needed please refer to the {ref}`Recorder` section, or try the SWO-based Trace Viewer.
+The Variable Viewer module samples the addresses of selected variables at regular time intervals. It is generally well-suited for medium-frequency signals, as the sampling rate is limited by the SWD speed and the type of probe used. If high-speed readout is required, please refer to the {ref}`Recorder` section or try the SWO-based Trace Viewer.
 
 Your target should be connected to the debug probe using SWDIO, SWCLK, and GND pins.
 
-1. Select *.elf file of your project in `Options->Acquisition`.
-2. Select the debug probe.
-3. Close the `Options->Acquisition` window and click `Import variables` button. 
-4. Select variables you'd like to visualize and click import.
-5. Now drag and drop the variables onto the plot canvas.
-6. Click the large `STOPPED` button to begin acquisition.
+1. Select the `*.elf` file of your project in `Options->Acquisition`.  
+2. Choose the debug probe.  
+3. Close the `Options->Acquisition` window and click the `Import Variables` button.  
+4. Select the variables you want to visualize and click `Import`.  
+5. Drag and drop the selected variables onto the plot canvas.  
+6. Click the large `STOPPED` button to start data acquisition.
 
-In case of any errors make sure to follow the instructions and visit {ref}`FAQVariableViewer`
+In case of any errors make sure to visit {ref}`VariableViewer` and {ref}`FAQ`
 
 
 ## Quick Start - Trace Viewer
@@ -53,15 +58,16 @@ In case of any errors make sure to follow the instructions and visit {ref}`FAQVa
 :align: center
 ```
 
-Trace Viewer module parses SWO trace data an displays the results in the form of plots. It is possible to visualize high speed signals with minimum overhead, as well as digital plots to visualize/profile interrupt execution.
+The Trace Viewer module parses SWO trace data and displays the results in the form of plots. It enables visualization of high-speed signals with minimal overhead, as well as digital plots for visualizing and profiling interrupt execution.
 
-Your target should be connected to the debug probe using SWDIO, SWCLK, **SWO**, and GND pins.
+Your target should be connected to the debug probe using the `SWDIO`, `SWCLK`, `SWO`, and `GND` pins.
 
-1. Switch to Trace Viewer tab.
-2. Select the debug probe in `Options->Acquisition`, close the window.
-3. Type in your core frequency in kHz in the main window.
-4. Select trace prescaler - start with a rather high value (~20) as it largely depends on your debug probe and SWD setup.
-5. In your code place special markers: 
+1. Switch to the `Trace Viewer` tab.  
+2. Select the debug probe in `Options → Acquisition`, then close the window.  
+3. Enter your core frequency in kHz in the main window.  
+4. Select a trace prescaler - start with a relatively high value (e.g., ~20), as this depends heavily on your debug probe and SWD setup.  
+5. In your code, place special markers:
+
 
 Example for digital data: 
 ```c
@@ -85,15 +91,16 @@ where x is the channel number in MCUViewer.
 
 6. Click the large `STOPPED` button to begin acquisition
 
-In case of any errors make sure to follow the instructions and visit {ref}`FAQTraceViewer`
+In case of any errors please visit {ref}`TraceViewer` and {ref}`FAQ`
 
 ## License
 
-MCUViewer is distributed under EULA License. The license is available in: 
+MCUViewer is distributed under the EULA License. The license is available in:
 
 * Windows: `C:\Program Files\MCUViewer\bin`
 * Linux: `/usr/local/MCUViewer`
 * MacOS: `Applications/MCUViewer/Contents/Resources`
+
 
 
 

@@ -29,12 +29,12 @@ trace_prescaler = 10
 max_points = 10000
 max_viewport_points_percent = 10
 trigger_channel = -1
-trigger_level = 0.900000
+trigger_level = 0.000000
 timeout = 2
-probe_type = 1
+probe_type = 0
 target_name = STM32G474CB
 probe_speed_khz = 10000
-probe_sn = 506003225
+probe_sn = 002B001F3431511531343632
 should_log = false
 log_directory = 
 
@@ -269,7 +269,7 @@ domain = 1
 [trace_plot2]
 name = CH2
 alias = CH2
-visibility = true
+visibility = false
 domain = 1
 
 [trace_plot3]
@@ -281,8 +281,9 @@ domain = 1
 [trace_plot4]
 name = CH4
 alias = CH4
-visibility = false
-domain = 1
+visibility = true
+domain = 0
+type = 6
 
 [trace_plot5]
 name = CH5
