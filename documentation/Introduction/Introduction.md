@@ -20,15 +20,26 @@ On Windows MCUViewer can be either installed or unpacked (portable version). Unp
 * Installing - download the *.zip file, unpack it, and double click the installer. Follow the instructions.
 * Unpacking - download the *.zip file, unpack it, and unpack the installer once again. Copy the unpacked folders to a preferred location. Run by double clicking the `MCUViewer.exe` file from bin directory. 
 
+```{note}
+Minimum supported version is Windows 10.
+```
+
 ### Linux
 
 Download the *.deb package and install it using:
 `sudo apt install ./MCUViewer-x.y.z-Linux.deb`
 
+```{note}
+Minimum supported version is Ubuntu 22.04 LTS. 
+```
+
 ### MacOS
 
 Download the *.dmg package. Open it and drag and drop the MCUViewer app to Applications folder. If the application does not run due to unverified source, make sure to allow it in the security preferences.
 
+```{note}
+Minimum supported version is MacOS 12 (Monterey).
+```
 
 ## Quick Start - Variable Viewer
 
