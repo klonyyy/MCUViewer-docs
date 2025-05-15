@@ -25,13 +25,17 @@ If you continue to experience any of the issues listed below, please contact us 
 
    If possible, try selecting a higher SWD speed. If that's not possible, you can lower the sampling frequency or switch to the recorder module for high-frequency signals.
 
-5. ** I get "Could not connect to JLink error". **
+5. **I get "Could not connect to JLink error".**
 
    Make sure you have installed the [JLink software pack]("https://www.segger.com/downloads/jlink/).
 
-6. ** I get "Update error! Please check *.elf file.". **
+6. **I get "Update error! Please check *.elf file.".**
 
    Make sure both *.elf file path and the gdb command are correct (`Acquisition -> Advanced -> GDB command`). For default GDB on Windows and MacOS it should be `./gdb`, for system gdb it should be `gdb` (must be added to the path). Ubuntu distribution always defaults to system gdb.
+
+7. **The import variables dialog shows incorrect array elements.**
+
+   Currently the import dialog will show the arrays as "name" + [size]. The index has to be typed in manually. 
 
 ## Recorder 
 
@@ -64,10 +68,10 @@ If you continue to experience any of the issues listed below, please contact us 
 
 ## General
 
-1. ** MCUViewer sidebar icon is not showing up on Ubuntu. **
+1. **MCUViewer sidebar icon is not showing up on Ubuntu.**
 
    Currently MCUViewer is compatible only with X11 environment. You can switch to X11 environment on the login screen by clicking the gear icon in the right bottom corner.
 
-2. ** My STLink is not detected on Ubuntu although it's plugged in. **
+2. **My STLink is not detected on Ubuntu although it's plugged in.**
 
    Make sure STLink udevrules are present in `/etc/udev/rules.d/`. Call `sudo udevadm control --reload-rules` and `sudo udevadm trigger` to reload the rules.
