@@ -31,11 +31,19 @@ If you continue to experience any of the issues listed below, please contact us 
 
 6. **I get "Update error! Please check *.elf file.".**
 
-   Make sure both *.elf file path and the gdb command are correct (`Acquisition -> Advanced -> GDB command`). For default GDB on Windows and MacOS it should be `./gdb`, for system gdb it should be `gdb` (must be added to the path). Ubuntu distribution always defaults to system gdb.
+   Make sure both *.elf file path and the gdb command are correct (`Acquisition -> Advanced -> GDB command`). For default GDB on Windows and MacOS it should be `./gdb`, for system gdb it should be `gdb` (must be added to the path). Ubuntu distribution always defaults to system gdb (`gdb`), so please make sure it's installed. 
 
 7. **The import variables dialog shows incorrect array elements.**
 
    Currently the import dialog will show the arrays as "name" + [size]. The index has to be typed in manually. 
+
+8. **I'm using a STLink probe and my target is not found - I cannot connect ot my target**
+
+   First make sure that you're able to connect to the target with other programs such as CubeProgrammer. If the target is detected correctly please contact us at contact@mcuviewer.com. 
+
+   ```{note}
+   MCUViewer may not support all microcontroller targets supported by STMicroelectronics' ST-Link tools when using the STLink debug probe. Users are responsible for verifying compatibility with their target device before purchase or deployment. 
+   ```
 
 ## Recorder 
 
