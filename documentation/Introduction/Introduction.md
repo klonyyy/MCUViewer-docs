@@ -18,7 +18,7 @@ MCUViewer can be downloaded from the [MCUViewer website](https://mcuviewer.com/#
 On Windows MCUViewer can be either installed or unpacked (portable version). Unpacking might be preferable in some cases as it does not require admin rights. 
 
 * Installing - download the *.zip file, unpack it, and double click the installer. Follow the instructions.
-* Unpacking - download the *.zip file, unpack it, and unpack the installer once again. Copy the unpacked folders to a preferred location. Run by double clicking the `MCUViewer.exe` file from bin directory. 
+* Unpacking - download the *.zip file, unpack it, and unpack the *.exe installer once again. Copy the unpacked folders to a preferred location. Run by double clicking the `MCUViewer.exe` file from bin directory. 
 
 ```{note}
 Minimum supported version is Windows 10.
@@ -29,13 +29,15 @@ Minimum supported version is Windows 10.
 Download the *.deb package and install it using:
 `sudo apt install ./MCUViewer-x.y.z-Linux.deb`
 
+On Linux MCUViewer requires a valid gdb. Please install it if not already present. You can check if it works by typing `gdb --version` in your terminal window. 
+
 ```{note}
 Minimum supported version is Ubuntu 22.04 LTS. 
 ```
 
 ### MacOS
 
-Download the *.dmg package. Open it and drag and drop the MCUViewer app to Applications folder. If the application does not run due to unverified source, make sure to allow it in the security preferences.
+Download the *.dmg package. Open it and drag and drop the MCUViewer app to Applications folder. If you're on ARM, you'll be propmted to install Rosetta when running the app. If the application does not run due to unverified source, make sure to allow it in the security preferences (Privacy & Security -> Security -> "Open Anyway"). 
 
 ```{note}
 Minimum supported version is MacOS 12 (Monterey).
@@ -112,10 +114,23 @@ MCUViewer is distributed under the EULA License. The license is available [onlin
 * Linux: `/usr/local/MCUViewer`
 * MacOS: `Applications/MCUViewer/Contents/Resources`
 
+```{note}
+MCUViewer may not support all microcontroller targets supported by STMicroelectronics' ST-Link tools when using the STLink debug probe. Users are responsible for verifying compatibility with their target device before purchase or deployment. 
+```
+
 For questions regarding licensing, contact contact@mcuviewer.com. 
 
+## Reporting bugs or improvements
 
+To report an issue or a feature request please contact us at contact@mcuviewer.com or start a new issue on the [MCUViewer GitHub repository](https://github.com/klonyyy/MCUViewer). 
 
+In case of a bug, please provide the following information to make it easier to reproduce and fix: 
+
+1. MCUViewer version
+2. Operating system and version
+3. Debug probe and target type
+4. Log file (log directory can be found in `Settings->General` window)
+5. Steps to reproduce, screenshots or videos of the issue
 
 
 
