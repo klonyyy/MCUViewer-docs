@@ -7,15 +7,13 @@ If you continue to experience any of the issues listed below, please contact us 
 
 1. **What is the difference between free and paid tier?**
 
-   The main difference is that MCUViewer Free cannot be used in commercial environments. In addition, there are three functional limitations in the free version compared to the paid version:
+   The main difference is that MCUViewer Free cannot be used in commercial environments. In addition, there are two functional limitations in the free version compared to the paid version:
 
-   - MCUViewer Free limits the number of simultaneously sampled variables to 10 - you can visualize up to 10 signals at once. There is no limit on the number of groups, plots, or other components in the Variable Viewer.
+   - MCUViewer free limits the number of simultaneously sampled recorder variables to 5. This limit does not apply to the table plot in the Recorder group, where you can still use up to 10 variables.
 
-   - It limits the number of simultaneously sampled recorder variables to 2. This limit does not apply to the table plot in the Recorder group, where you can still use up to 10 variables.
+   - MCUViewer free limits the number of simultaneously sampled trace channels to 5.
 
-   - It limits the number of simultaneously sampled trace channels to 2.
-
-   The paid tiers remove these limitations, allowing you to sample more signals, and also provide full support and prioritized bug fixes for you and your team.
+Paid tiers remove these limitations, enabling you to sample more signals. They also include full support and prioritized bug fixes for you and your team. MCUViewer Standard is offered at a lower price point, tailored for startups and small organizations (up to 5 employees), while MCUViewer Enterprise is designed for larger organizations and is priced on a per-case basis.
 
 ## Variable Viewer
 
