@@ -100,7 +100,7 @@ uint16_t a = getAdcSample();       // some high frequency signal to trace
 ITM->PORT[x].u16 = a;              
 ```
 
-where x is the channel number in MCUViewer.
+where x is the channel number in MCUViewer. Moreover you need to configure the SWO pin of your microcontroller. 
 
 6. Click the large `STOPPED` button to begin acquisition
 

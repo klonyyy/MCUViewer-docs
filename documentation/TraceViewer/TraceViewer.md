@@ -73,6 +73,8 @@ Channels canvas is where all plots are drawn. The same plot manipulation rules a
 
 ## Setup
 
+First make sure that the SWO of your microcontroller is connected to the debug probe and that the GPIO pin of the SWO is correctly configured. 
+
 In order to set up the trace viewer you need to place special "markers" in your code. These markers are simple register writes to the ITM (Instrumentation Trace Macrocell) peripheral. The values that have to be written differ based on plot you'd like to represent. 
 
 ### Digital plots
