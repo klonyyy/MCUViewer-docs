@@ -9,7 +9,7 @@ If you continue to experience any of the issues listed below, please contact us 
 
    The main difference is that MCUViewer Free cannot be used in commercial environments. In addition, there are two functional limitations in the free version compared to the paid version:
 
-   - MCUViewer free limits the number of simultaneously sampled recorder variables to 5. This limit does not apply to the table plot in the Recorder group, where you can still use up to 10 variables.
+   - MCUViewer free limits the number of simultaneously sampled recorder variables to 5. This limit does not apply to the table plot in the Recorder group, where you can still use unlimited number of variables.
 
    - MCUViewer free limits the number of simultaneously sampled trace channels to 5.
 
