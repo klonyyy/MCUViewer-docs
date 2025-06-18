@@ -24,7 +24,7 @@ The general section holds general settings for the acquisition.
 
 ## Debug probe section
 
-The debug probe section holds settings for the debug probe. Currently STLink and JLink probes are supported. The window below presents JLink settings, as STLink setup is more straightforward.
+The debug probe section holds settings for the debug probe. The window below presents JLink settings, as STLink setup is more straightforward. Please see next section for GDB server probe setup.
 
 1. `Debug probe selection` - select the debug probe you are using
 2. `Debug probe serial number` - select a serial number of your debug probe
@@ -37,6 +37,22 @@ The debug probe section holds settings for the debug probe. Currently STLink and
 :width: 1000px
 :align: center
 ```
+
+## GDB server probe section
+
+GDB server can be used in case your probe is not natively supported by MCUViewer (other than STLink and JLink).
+
+To use the GDB server probe you first need to start a gdb server that can connect to your probe. It can be a vendor-provided GDB server or openOCD. When using a GDB config it is very important to make sure that the default behavior on attach does not result in target halt. In openOCD target.cfg file it can be ensured by adding the following line:
+
+```
+$_TARGETNAME configure -event gdb-attach {  }
+gdb memory_map disable
+```
+
+After running the server ensure a correct IP and port number is set in MCUViewer. After that simply exit the window and start acquisition. If the acquisition is too slow please check out the {ref}`Recorder` page. 
+
+The GDB server can be used to download the new firmware so that no server restart is needed. In such cases make sure the target is halted before download and after it should be resumed. 
+
 
 ## Recorder section
 

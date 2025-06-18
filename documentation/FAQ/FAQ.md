@@ -95,3 +95,7 @@ Paid tiers remove these limitations, enabling you to sample more signals. They a
 2. **My STLink is not detected on Ubuntu although it's plugged in.**
 
    Make sure STLink udevrules are present in `/etc/udev/rules.d/`. Call `sudo udevadm control --reload-rules` and `sudo udevadm trigger` to reload the rules.
+
+3. **I'm using probe X. Is it supported by MCUViewer?**
+
+   Currently MCUViewer is compatible with JLink and STLink probes. If you're using a different probe please use the GDB server probe setup described in the {ref}`AcquisitionSettings` page.
