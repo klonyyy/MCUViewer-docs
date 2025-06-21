@@ -26,6 +26,7 @@ The general section holds general settings for the acquisition.
 
 The debug probe section holds settings for the debug probe. The window below presents JLink settings, as STLink setup is more straightforward. Please see next section for GDB server probe setup.
 
+
 1. `Debug probe selection` - select the debug probe you are using
 2. `Debug probe serial number` - select a serial number of your debug probe
 3. `SWD speed in kHz` - select a SWD speed in kHz. Be careful with too high values as they can cause target resets. Too low values will lower the maximum data rate. The recorder module is not affected by this setting.
