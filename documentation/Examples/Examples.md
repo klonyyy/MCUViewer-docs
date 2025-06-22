@@ -61,7 +61,7 @@ Note that we are using the copy of target config from step 1.This command should
 
 8. Start the acquisition in MCUViewer - you should see the sine wave.
 
-```{figure} ./images/varViewerSine.png
+```{figure} ./images/varViewerSine.gif
 :width: 1000px
 :align: center
 ```
@@ -233,7 +233,7 @@ Remember to modify the `recorderDefines.h` file to match your system configurati
 
 9. Start the acquisition and you should see the sine wave with much more detail and higher sampling rate. 
 
-```{figure} ./images/recorderSine.png
+```{figure} ./images/recorderSine.gif
 :width: 1000px
 :align: center
 ```
