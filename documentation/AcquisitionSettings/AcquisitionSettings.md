@@ -24,7 +24,8 @@ The general section holds general settings for the acquisition.
 
 ## Debug probe section
 
-The debug probe section holds settings for the debug probe. Currently STLink and JLink probes are supported. The window below presents JLink settings, as STLink setup is more straightforward.
+The debug probe section holds settings for the debug probe. The window below presents JLink settings, as STLink setup is more straightforward. Please see next section for GDB server probe setup.
+
 
 1. `Debug probe selection` - select the debug probe you are using
 2. `Debug probe serial number` - select a serial number of your debug probe
@@ -37,6 +38,39 @@ The debug probe section holds settings for the debug probe. Currently STLink and
 :width: 1000px
 :align: center
 ```
+
+## GDB server probe section
+
+GDB server can be used in case your probe is not natively supported by MCUViewer (other than STLink and JLink).
+
+```{note}
+Currently GDB server probe is only available in [MCUViewer 1.2.2 beta](https://download.mcuviewer.com/releases/beta/1.2.2_b2f6e24/).  
+```
+
+To use the GDB server probe you first need to start a GDB server that can connect to your probe. It can be a vendor-provided GDB server or openOCD. Since GDB servers usually halt the target on connect we need to either resume it or configure it to not halt. There are two ways to achieve this:
+
+1. Resume the target using telnet
+
+2. Avoid halting the target by adding the following line to the target.cfg file:
+
+```
+$_TARGETNAME configure -event gdb-attach { resume }
+gdb memory_map disable
+```
+
+After running the server ensure a correct IP and port number is set in MCUViewer. After that simply exit the window and start acquisition. If the acquisition is too slow please check out the {ref}`Recorder` page. 
+
+The exact same GDB server can be used to download the new firmware so that no server restart is needed. In such cases make sure the target is halted before download and after it should be resumed. An example flow might look like this:
+
+1. Start the GDB server, pass the probe and target as arguments
+2. Connect using MCUViewer (at this stage it will most probably be halted so all traces will be constant)
+3. Connect from other terminal using telnet to the GDB server
+4. Download the new firmware
+5. Resume the target
+6. Go back to MCUViewer
+
+This can be highly automated in a workflow described in {ref}`Examples` section.
+
 
 ## Recorder section
 
