@@ -43,6 +43,10 @@ The debug probe section holds settings for the debug probe. The window below pre
 
 GDB server can be used in case your probe is not natively supported by MCUViewer (other than STLink and JLink).
 
+```{note}
+Currently GDB server probe is only available in [MCUViewer 1.2.2 beta](https://download.mcuviewer.com/releases/beta/1.2.2_b2f6e24/).  
+```
+
 To use the GDB server probe you first need to start a GDB server that can connect to your probe. It can be a vendor-provided GDB server or openOCD. Since GDB servers usually halt the target on connect we need to either resume it or configure it to not halt. There are two ways to achieve this:
 
 1. Resume the target using telnet

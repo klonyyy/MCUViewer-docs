@@ -7,6 +7,10 @@ Examples show how to set up MCUViewer with different probes.
 
 Raspberry Pi debug probe is not natively supported by MCUViewer. This means that we need a GDB server to connect to it. In this example we will use OpenOCD with an example project for Raspberry Pi Pico rp2040.
 
+```{note}
+Currently GDB server probe is only available in [MCUViewer 1.2.2 beta](https://download.mcuviewer.com/releases/beta/1.2.2_b2f6e24/).  
+```
+
 1. Create a new Raspberry PI Pico project in VScode
 
 2. Copy the interface/rp2040.cfg to the project folder. Add the following lines at the end of the file:
