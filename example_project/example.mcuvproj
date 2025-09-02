@@ -22,6 +22,8 @@ gdb_command = ./gdb
 recorder_enabled = true
 restart_on_group_change = true
 keep_connection = true
+ip_address = 127.0.0.1
+port = 3333
 
 [trace_settings]
 core_frequency = 150000
@@ -41,7 +43,7 @@ log_directory =
 [var0]
 name = ErrorOvervoltage
 tracked_name = test.errorWord
-address = 536904028
+address = 536904076
 type = 5
 color = 2207631687
 should_update_from_elf = true
@@ -49,11 +51,12 @@ shift = 5
 mask = 1
 high_level_type = 0
 value_to_write = 0.000000
+do_not_interpret_as_enum = false
 
 [var1]
 name = test.a
 tracked_name = test.a
-address = 536904008
+address = 536904056
 type = 7
 color = 3037171712
 should_update_from_elf = true
@@ -61,11 +64,12 @@ shift = 0
 mask = 4294967295
 high_level_type = 0
 value_to_write = 0.000000
+do_not_interpret_as_enum = false
 
 [var2]
 name = test.b
 tracked_name = test.b
-address = 536904012
+address = 536904060
 type = 7
 color = 33570008
 should_update_from_elf = true
@@ -73,11 +77,12 @@ shift = 0
 mask = 4294967295
 high_level_type = 0
 value_to_write = 0.000000
+do_not_interpret_as_enum = false
 
 [var3]
 name = test.c
 tracked_name = test.c
-address = 536904016
+address = 536904064
 type = 7
 color = 3320774400
 should_update_from_elf = true
@@ -85,11 +90,12 @@ shift = 0
 mask = 4294967295
 high_level_type = 0
 value_to_write = 0.000000
+do_not_interpret_as_enum = false
 
 [var4]
 name = test.errorWord
 tracked_name = test.errorWord
-address = 536904028
+address = 536904076
 type = 5
 color = 3815256485
 should_update_from_elf = true
@@ -97,11 +103,12 @@ shift = 0
 mask = 4294967295
 high_level_type = 0
 value_to_write = 0.000000
+do_not_interpret_as_enum = false
 
 [var5]
 name = test.frac_i16
 tracked_name = test.frac_i16
-address = 536904140
+address = 536904188
 type = 4
 color = 835199618
 should_update_from_elf = true
@@ -109,6 +116,7 @@ shift = 0
 mask = 4294967295
 high_level_type = 1
 value_to_write = 0.000000
+do_not_interpret_as_enum = false
 frac = 15
 base = 1.000000
 base_variable = test.voltageBase
@@ -116,7 +124,7 @@ base_variable = test.voltageBase
 [var6]
 name = test.frac_i16_FR
 tracked_name = test.frac_i16
-address = 536904140
+address = 536904188
 type = 4
 color = 1088876177
 should_update_from_elf = true
@@ -124,6 +132,7 @@ shift = 0
 mask = 4294967295
 high_level_type = 1
 value_to_write = 0.000000
+do_not_interpret_as_enum = false
 frac = 15
 base = 1.000000
 base_variable = 
@@ -131,7 +140,7 @@ base_variable =
 [var7]
 name = test.frac_i8
 tracked_name = test.frac_i8
-address = 536904137
+address = 536904185
 type = 2
 color = 1175513771
 should_update_from_elf = true
@@ -139,11 +148,12 @@ shift = 0
 mask = 4294967295
 high_level_type = 0
 value_to_write = 0.000000
+do_not_interpret_as_enum = false
 
 [var8]
 name = test.structA.a
 tracked_name = test.structA.a
-address = 536904105
+address = 536904153
 type = 1
 color = 2778834697
 should_update_from_elf = true
@@ -151,11 +161,12 @@ shift = 0
 mask = 4294967295
 high_level_type = 0
 value_to_write = 0.000000
+do_not_interpret_as_enum = false
 
 [var9]
 name = test.structA.b
 tracked_name = test.structA.b
-address = 536904106
+address = 536904154
 type = 1
 color = 1540228881
 should_update_from_elf = true
@@ -163,11 +174,12 @@ shift = 0
 mask = 4294967295
 high_level_type = 0
 value_to_write = 0.000000
+do_not_interpret_as_enum = false
 
 [var10]
 name = test.structA.e
 tracked_name = test.structA.e
-address = 536904109
+address = 536904157
 type = 1
 color = 1694063933
 should_update_from_elf = true
@@ -175,11 +187,12 @@ shift = 0
 mask = 4294967295
 high_level_type = 0
 value_to_write = 0.000000
+do_not_interpret_as_enum = false
 
 [var11]
 name = test.voltageBase
 tracked_name = test.voltageBase
-address = 536903988
+address = 536904036
 type = 7
 color = 1426103285
 should_update_from_elf = true
@@ -187,6 +200,7 @@ shift = 0
 mask = 4294967295
 high_level_type = 0
 value_to_write = 0.000000
+do_not_interpret_as_enum = false
 
 [group0]
 name = new group0
