@@ -13,7 +13,7 @@ If you continue to experience any of the issues listed below, please contact us 
 
    - MCUViewer free limits the number of simultaneously sampled trace channels to 5.
 
-Paid tiers remove these limitations, enabling you to sample more signals. They also include full support and prioritized bug fixes for you and your team. MCUViewer Standard is offered at a lower price point, tailored for startups and small organizations (up to 5 employees), while MCUViewer Enterprise is designed for larger organizations and is priced on a per-case basis.
+Paid tiers remove these limitations, enabling you to sample more signals. They also include full support and prioritized bug fixes for you and your team. MCUViewer Standard is offered at a lower price point, tailored for startups and small organizations (up to 5 employees), while MCUViewer Enterprise is designed for larger organizations and is priced on a per-case basis. Please contact us at contact@mcuviewer.com to learn more.
 
 ## Variable Viewer
 
@@ -39,9 +39,9 @@ Paid tiers remove these limitations, enabling you to sample more signals. They a
 
 5. **I get "Could not connect to JLink error".**
 
-   Make sure you have installed the [JLink software pack]("https://www.segger.com/downloads/jlink/).
+   Make sure you have installed the [JLink software pack](https://www.segger.com/downloads/jlink/).
 
-6. **I get "Update error! Please check *.elf file.".**
+6. <b>I get "Update error! Please check *.elf file".</b>
 
    Make sure both *.elf file path and the gdb command are correct (`Acquisition -> Advanced -> GDB command`). For default GDB on Windows and MacOS it should be `./gdb`, for system gdb it should be `gdb` (must be added to the path). Ubuntu distribution always defaults to system gdb (`gdb`), so please make sure it's installed. 
 
@@ -99,3 +99,11 @@ Paid tiers remove these limitations, enabling you to sample more signals. They a
 3. **I'm using probe X. Is it supported by MCUViewer?**
 
    Currently MCUViewer is compatible with JLink and STLink probes. If you're using a different probe please use the GDB server probe setup described in the {ref}`AcquisitionSettings` page.
+
+## Known issues and limitations
+
+Known issues are always listed in respect to the latest version of MCUViewer.
+
+1. **RTX A2000 graphics card memory leak.**
+
+   Some users have reported that when using the RTX A2000 graphics card, MCUViewer will leak memory causing it to eventually crash. The workaround is to use the integrated graphics card instead. If you are also affected please give us a message at contact@mcuviewer.com 
