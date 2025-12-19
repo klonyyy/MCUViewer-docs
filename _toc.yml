@@ -1,13 +1,16 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
 root: documentation/Introduction/Introduction
+
 chapters:
 - file: documentation/VariableViewer/VariableViewer
 - file: documentation/TraceViewer/TraceViewer
 - file: documentation/Recorder/Recorder
+- file: documentation/SerialDriver/SerialDriver
 - file: documentation/AcquisitionSettings/AcquisitionSettings
 - file: documentation/GeneralSettings/GeneralSettings
 - file: documentation/FAQ/FAQ
+
 - file: documentation/Examples/Examples
+  sections:
+    - file: documentation/Examples/C2000/C2000
+    - file: documentation/Examples/GDBServer/GDBServer

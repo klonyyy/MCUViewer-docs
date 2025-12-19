@@ -14,7 +14,7 @@ The general section holds general settings for the acquisition.
 4. `Stop on *.elf change` - if checked the acquisition will be stopped when the *.elf file is changed (whenever you recompile)
 5. `Sampling` - set the sampling frequency in Hz. Depending on your debug probe setup this can be reached or not. 
 6. `Max points` - number of points in the circular buffer collecting the data. When acquisition is longer the oldest points are going to be lost. At low sampling frequencies you can use {ref}`Logging` to stream the data to a file.
-7. `Viewport points` - width of the plot viewport in points during acquisition. Lower values are preferred as they make the interface more responsive.
+7. `Viewport width` - width of the plot viewport in milliseconds during acquisition.
 
 
 ```{figure} ./images/AcquisitionGeneral.png
