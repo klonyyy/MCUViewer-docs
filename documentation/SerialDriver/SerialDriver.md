@@ -14,6 +14,7 @@ Using serial driver is more intrusive than using debug probe direct memory reado
 4. Implement the data transmission and reception. Example for STM32 HAL could look like this:
 
 ```c
+/* RECEIVE */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef* huart)
 {
 	if (huart->Instance == USART3)
@@ -24,10 +25,30 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef* huart)
 	}
 }
 
+/* SEND */
 void serialDriverSendData(uint8_t* buf, uint16_t size)
 {
     // send data to the serial port
     HAL_UART_Transmit_IT(&huart3, buf, size);       
+}
+```
+
+or C2000: 
+
+```c
+/* RECEIVE */
+__interrupt void INT_mySCIA_RX_ISR(void)
+{
+    char rxChar = SCI_readCharBlockingFIFO(mySCIA_BASE);
+    SCI_clearInterruptStatus(mySCIA_BASE, SCI_INT_RXFF);
+    Interrupt_clearACKGroup(INT_mySCIA_RX_INTERRUPT_ACK_GROUP);
+    serialDriverReceiveByte(rxChar);
+}
+
+/* SEND */
+void serialDriverSendData(uint16_t* buf, uint16_t size)
+{  
+    SCI_writeCharArray(mySCIA_BASE, buf, size);
 }
 ```
 
@@ -38,8 +59,12 @@ After that, open the {ref}`AcquisitionSettings` window, and select the serial dr
 :align: center
 ```
 
-After that the serial driver is configured and ready to be used. 
+Next make sure the target is connected, powered on and click the "Detect serial" button (4). It should detect the serial driver version and max variables from `serialDriverDefines.h` file like in the picture below. Any errors will be listed in the Status text box (5).
 
+```{figure} ./images/SerialDriverDetected.png
+:width: 1000px
+:align: center
+```
 
 ## Serial driver profiling
 
