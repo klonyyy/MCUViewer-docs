@@ -5,12 +5,12 @@ Serial driver allows you to use a serial port for communication in case the debu
 
 Using serial driver is more intrusive than using debug probe direct memory readout, however in some applications it is the only option. The serial driver works with both [Variable Viewer](VariableViewer) and [Recorder](Recorder) modules.
 
-
+(serial_driver_setup)=
 ## Serial driver setup
 
 1. Make sure your target is capable of sending and receiving data using UART - test it on a simple PC terminal first. 
 2. Copy the serial driver folder from the downloaded MCUViewer *.zip file to your project.
-3. Add the serial driver folder to the build system.
+3. Add the serial driver folder to the build system. Adjust the `serialDriverDefines.h` file to match your system configuration.
 4. Implement the data transmission and reception. Example for STM32 HAL could look like this:
 
 ```c
@@ -19,17 +19,17 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef* huart)
 {
 	if (huart->Instance == USART3)
 	{
-        // pass the received byte to the serial driver
-        serialDriverReceiveByte(rxByte);            
-        HAL_UART_Receive_IT(&huart3, &rxByte, 1);
+		// pass the received byte to the serial driver
+		serialDriverReceiveByte(rxByte);           			// <-------
+		HAL_UART_Receive_IT(&huart3, &rxByte, 1);
 	}
 }
 
 /* SEND */
-void serialDriverSendData(uint8_t* buf, uint16_t size)
+void serialDriverSendData(uint8_t* buf, uint16_t size) 	    // <-------
 {
-    // send data to the serial port
-    HAL_UART_Transmit_IT(&huart3, buf, size);       
+	// send data to the serial port
+	HAL_UART_Transmit_IT(&huart3, buf, size);       
 }
 ```
 
@@ -39,16 +39,16 @@ or C2000:
 /* RECEIVE */
 __interrupt void INT_mySCIA_RX_ISR(void)
 {
-    char rxChar = SCI_readCharBlockingFIFO(mySCIA_BASE);
-    SCI_clearInterruptStatus(mySCIA_BASE, SCI_INT_RXFF);
-    Interrupt_clearACKGroup(INT_mySCIA_RX_INTERRUPT_ACK_GROUP);
-    serialDriverReceiveByte(rxChar);
+	char rxChar = SCI_readCharBlockingFIFO(mySCIA_BASE);
+	SCI_clearInterruptStatus(mySCIA_BASE, SCI_INT_RXFF);
+	Interrupt_clearACKGroup(INT_mySCIA_RX_INTERRUPT_ACK_GROUP);
+	serialDriverReceiveByte(rxChar);						// <-------
 }
 
 /* SEND */
-void serialDriverSendData(uint16_t* buf, uint16_t size)
+void serialDriverSendData(uint16_t* buf, uint16_t size)     // <-------
 {  
-    SCI_writeCharArray(mySCIA_BASE, buf, size);
+	SCI_writeCharArray(mySCIA_BASE, buf, size);
 }
 ```
 

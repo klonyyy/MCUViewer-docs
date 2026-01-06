@@ -1,6 +1,6 @@
 
-(GDBServer_example)=
-# GDBServer 
+(RaspberryPi_debug_probe_GDBServer_example)=
+# Raspberry Pi debug probe and GDBServer 
 
 Raspberry Pi debug probe is not natively supported by MCUViewer. This means that we need a GDB server to connect to it. In this example we will use OpenOCD with an example project for Raspberry Pi Pico rp2040.
 

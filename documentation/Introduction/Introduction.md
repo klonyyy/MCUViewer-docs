@@ -43,6 +43,7 @@ Download the *.dmg package. Open it and drag and drop the MCUViewer app to Appli
 Minimum supported version is MacOS 12 (Monterey).
 ```
 
+(QuickStartViewer)= 
 ## Quick Start - Variable Viewer
 
 ```{figure} ./images/VarViewerWhite.png
