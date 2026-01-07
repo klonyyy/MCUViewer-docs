@@ -1,11 +1,11 @@
-(serial_driver)=
+(SerialDriver)=
 # Serial Driver
 
 Serial driver allows you to use a serial port for communication in case the debug probe of your target is not supported or cannot be used due to lack of galvanic isolation or high EMI pollution. 
 
 Using serial driver is more intrusive than using debug probe direct memory readout, however in some applications it is the only option. The serial driver works with both [Variable Viewer](VariableViewer) and [Recorder](Recorder) modules.
 
-(serial_driver_setup)=
+(SerialDriverSetup)=
 ## Serial driver setup
 
 1. Make sure your target is capable of sending and receiving data using UART - test it on a simple PC terminal first. 

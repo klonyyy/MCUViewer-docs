@@ -98,7 +98,7 @@ Paid tiers remove these limitations, enabling you to sample more signals. They a
 
 3. **I'm using probe X. Is it supported by MCUViewer?**
 
-   Currently MCUViewer is compatible with JLink and STLink probes. If you're using a different probe please use the GDB server probe setup described in the {ref}`AcquisitionSettings` page.
+   Currently MCUViewer is compatible with JLink and STLink probes. If you're using a different probe please use the GDB server probe setup described in the {ref}`AcquisitionSettings` page. In case you're using a less popular MCU the [serial driver](SerialDriver) might be the best option.
 
 ## Known issues and limitations
 
@@ -107,3 +107,7 @@ Known issues are always listed in respect to the latest version of MCUViewer.
 1. **RTX A2000 graphics card memory leak.**
 
    Some users have reported that when using the RTX A2000 graphics card, MCUViewer will leak memory causing it to eventually crash. The workaround is to use the integrated graphics card instead. If you are also affected please give us a message at contact@mcuviewer.com 
+
+2. **C2000 family \*.elf file parsing issues.**
+
+   Currently, GDB is used for parsing the *.elf output file. Due to TI's custom DWARF extensions there are problems while parsing variables with `const`/`volatile` keywords. Current fix is to remove the keywords or rewrite the variable value to a non-const/non-volatile one. This will be fixed in the future.
