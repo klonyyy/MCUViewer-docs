@@ -24,7 +24,7 @@ The recorder module allows visualization of very high-speed signals, even on low
 * Enable the recorder module by ticking the "Recorder" checkbox (1) in the Options->Acquisition window.
 * Click the `Detect recorder` button (2). If it is detected correctly there should be no errors, just a `Recorder detected!` information with all fields filled in as in the `recorderDefines.h` file.
 
-In case of errors please first see the {ref}`FAQ` section.
+In case of errors please first see the {ref}`FAQ` section and {ref}`Examples` section.
 
 ```{figure} ./images/RecorderSettings.png
 :width: 1000px

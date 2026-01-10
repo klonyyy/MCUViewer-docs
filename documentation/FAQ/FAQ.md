@@ -106,8 +106,8 @@ Known issues are always listed in respect to the latest version of MCUViewer.
 
 1. **RTX A2000 graphics card memory leak.**
 
-   Some users have reported that when using the RTX A2000 graphics card, MCUViewer will leak memory causing it to eventually crash. The workaround is to use the integrated graphics card instead. If you are also affected please give us a message at contact@mcuviewer.com 
+   Some users have reported that when using the RTX A2000 graphics card, MCUViewer will leak memory causing it to eventually crash. The workaround is to use the integrated graphics card instead. If you are also affected please give us a message at contact@mcuviewer.com.
 
 2. **C2000 family \*.elf file parsing issues.**
 
-   Currently, GDB is used for parsing the *.elf output file. Due to TI's custom DWARF extensions there are problems while parsing variables with `const`/`volatile` keywords. Current fix is to remove the keywords or rewrite the variable value to a non-const/non-volatile one. This will be fixed in the future.
+   Currently, GDB is used for parsing the *.elf output file. Due to TI's custom DWARF extensions there are problems while parsing variables with `const`/`volatile` keywords and enums. Current fix is to remove the keywords or rewrite the variable value to a non-const/non-volatile one, and use original types instead of typedef enum. This will be fixed in the future.
