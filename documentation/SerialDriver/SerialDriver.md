@@ -5,6 +5,11 @@ Serial driver allows you to use a serial port for communication in case the debu
 
 Using serial driver is more intrusive than using debug probe direct memory readout, however in some applications it is the only option. The serial driver works with both [Variable Viewer](VariableViewer) and [Recorder](Recorder) modules.
 
+```{warning}
+
+Currently serial driver is compatible only with MCUViewer 1.2.5 beta, which can be found [here](https://download.mcuviewer.com/releases/beta/).
+```
+
 (SerialDriverSetup)=
 ## Serial driver setup
 
