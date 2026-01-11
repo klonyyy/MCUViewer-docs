@@ -43,7 +43,7 @@ Paid tiers remove these limitations, enabling you to sample more signals. They a
 
 6. <b>I get "Update error! Please check *.elf file".</b>
 
-   Make sure both *.elf file path and the gdb command are correct (`Acquisition -> Advanced -> GDB command`). For default GDB on Windows and MacOS it should be `./gdb`, for system gdb it should be `gdb` (must be added to the path). Ubuntu distribution always defaults to system gdb (`gdb`), so please make sure it's installed. 
+   Make sure both *.elf file path and the gdb command are correct (`Acquisition -> Advanced -> GDB command`). For default GDB on Windows and MacOS it should be `./gdb`, for system gdb it should be `gdb` (must be added to the path). Ubuntu distribution always defaults to system gdb (`gdb`), so please make sure it's installed. If you're working with C2000 *.elf files make sure to use GDB 14.2 or newer.
 
 7. **The import variables dialog shows incorrect array elements.**
 
@@ -96,9 +96,9 @@ Paid tiers remove these limitations, enabling you to sample more signals. They a
 
    Make sure STLink udevrules are present in `/etc/udev/rules.d/`. Call `sudo udevadm control --reload-rules` and `sudo udevadm trigger` to reload the rules.
 
-3. **I'm using probe X. Is it supported by MCUViewer?**
+3. **I'm using probe X and MCU Y. Is it supported by MCUViewer?**
 
-   Currently MCUViewer is compatible with JLink and STLink probes. If you're using a different probe please use the GDB server probe setup described in the {ref}`AcquisitionSettings` page.
+   Currently MCUViewer is compatible with JLink and STLink probes. If you're using a different probe please use the GDB server probe setup described in the {ref}`AcquisitionSettings` page. In case you're using a less popular MCU the [serial driver](SerialDriver) might be the best option.
 
 ## Known issues and limitations
 
@@ -106,4 +106,8 @@ Known issues are always listed in respect to the latest version of MCUViewer.
 
 1. **RTX A2000 graphics card memory leak.**
 
-   Some users have reported that when using the RTX A2000 graphics card, MCUViewer will leak memory causing it to eventually crash. The workaround is to use the integrated graphics card instead. If you are also affected please give us a message at contact@mcuviewer.com 
+   Some users have reported that when using the RTX A2000 graphics card, MCUViewer will leak memory causing it to eventually crash. The workaround is to use the integrated graphics card instead. If you are also affected please give us a message at contact@mcuviewer.com.
+
+2. **C2000 family \*.elf file parsing issues.**
+
+   Currently, GDB is used for parsing the *.elf output file. Due to TI's custom DWARF extensions there are problems while parsing variables with `const`/`volatile` keywords. Current fix is to remove the keywords or assign the variable value to a non-const/non-volatile one. This will be fixed in the upcoming MCUViewer versions.

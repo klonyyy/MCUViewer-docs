@@ -2,7 +2,7 @@
 (AcquisitionSettings)=
 # Acquisition Settings
 
-Acquisition settings window is used to control the acquisition. 
+Acquisition settings window is used to control the acquisition. Open by selecting `Options->Acquisition` from the top menu.
 
 ## General section
 
@@ -14,7 +14,7 @@ The general section holds general settings for the acquisition.
 4. `Stop on *.elf change` - if checked the acquisition will be stopped when the *.elf file is changed (whenever you recompile)
 5. `Sampling` - set the sampling frequency in Hz. Depending on your debug probe setup this can be reached or not. 
 6. `Max points` - number of points in the circular buffer collecting the data. When acquisition is longer the oldest points are going to be lost. At low sampling frequencies you can use {ref}`Logging` to stream the data to a file.
-7. `Viewport points` - width of the plot viewport in points during acquisition. Lower values are preferred as they make the interface more responsive.
+7. `Viewport width` - width of the plot viewport in milliseconds during acquisition.
 
 
 ```{figure} ./images/AcquisitionGeneral.png
@@ -71,6 +71,9 @@ The exact same GDB server can be used to download the new firmware so that no se
 
 This can be highly automated in a workflow described in {ref}`Examples` section.
 
+## Serial probe section
+
+Serial probe can be used if your probe is not natively supported by MCUViewer, even with GDB server - this is the case for example with C2000 probes. The serial probe requires some setup on the target side that can be found in the {ref}`SerialDriver` section and {ref}`Examples` section.
 
 ## Recorder section
 
