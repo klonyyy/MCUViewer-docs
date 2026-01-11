@@ -66,6 +66,10 @@ Next make sure the target is connected, powered on and click the "Detect serial"
 :align: center
 ```
 
+```{warning}
+The target MCU may need to be reset after a failed detection at an incorrect baud rate before another attempt to detect the serial driver can be made.
+```
+
 ## Serial driver profiling
 
 Since serial driver is invasive, i.e. it takes some of the CPU processing time it is recommended to check the CPU load on your application. Below are the profiling results using [trace viewer](TraceViewer) for STM32G4 target running at 150Mhz.
