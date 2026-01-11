@@ -43,7 +43,7 @@ Paid tiers remove these limitations, enabling you to sample more signals. They a
 
 6. <b>I get "Update error! Please check *.elf file".</b>
 
-   Make sure both *.elf file path and the gdb command are correct (`Acquisition -> Advanced -> GDB command`). For default GDB on Windows and MacOS it should be `./gdb`, for system gdb it should be `gdb` (must be added to the path). Ubuntu distribution always defaults to system gdb (`gdb`), so please make sure it's installed. If you're working with C2000 *.elf files make sure to use GDB 16.2 or newer.
+   Make sure both *.elf file path and the gdb command are correct (`Acquisition -> Advanced -> GDB command`). For default GDB on Windows and MacOS it should be `./gdb`, for system gdb it should be `gdb` (must be added to the path). Ubuntu distribution always defaults to system gdb (`gdb`), so please make sure it's installed. If you're working with C2000 *.elf files make sure to use GDB 14.2 or newer.
 
 7. **The import variables dialog shows incorrect array elements.**
 
