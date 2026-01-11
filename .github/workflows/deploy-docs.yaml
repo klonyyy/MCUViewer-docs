@@ -46,9 +46,8 @@ jobs:
       # Build the book
       - name: Build the book
         run: |
-          ls
-          jupyter-book clean .
-          jupyter-book build .
+          jupyter-book clean documentation
+          jupyter-book build documentation
 
       # https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow
 
