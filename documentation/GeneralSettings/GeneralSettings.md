@@ -1,5 +1,7 @@
 # General Settings
 
+General settings window is used to control application settings. Open by selecting `Options->General` from the top menu.
+
 ## General section
 
 1. `Project auto save` - select if you'd like to automatically and periodically save your project

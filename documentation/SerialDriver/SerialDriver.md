@@ -70,6 +70,10 @@ Next make sure the target is connected, powered on and click the "Detect serial"
 
 Since serial driver is invasive, i.e. it takes some of the CPU processing time it is recommended to check the CPU load on your application. Below are the profiling results using [trace viewer](TraceViewer) for STM32G4 target running at 150Mhz.
 
+```{note}
+On targets that lack SWO support profiling can be done using a simple GPIO toggling and oscilloscope readout. TraceViewer is preferred due to it's multi channel nature and ease of use. 
+```
+
 
 ### The setup
 
@@ -122,5 +126,3 @@ We can clearly see the packets of data sent with around 1kHz - the sampling freq
 ```
 
 When we zoom we can see that there is some overhead each time a new byte is received (~800ns), and the longest it takes is to send the response back - this takes around 2.6us including the HAL function. Depending on the amount of variables being sampled the number of bytes will increase and the response function will take longer. Please remember these are the results for a concrete target (STM32G4 running at 150Mhz).
-
-For the structure of the frames please refer to the README file included in the serial driver folder.

@@ -11,6 +11,16 @@ MCUViewer is a non-intrusive GUI debugging tool for microcontrollers that allows
 
 MCUViewer can be downloaded from the [MCUViewer website](https://mcuviewer.com/#downloads).
 
+## Supported Probes and MCUs
+
+MCUViewer natively supports the following interfaces:
+- ST-Link
+- J-Link
+- OpenOCD-compatible probes (via GDB server; not all are fully tested)
+
+If your probe is not natively supported by MCUViewer (for example, TI C2000 probes), you can use the [Serial Driver](SerialDriver) solution instead. This allows MCUViewer to communicate with any target device that provides a serial interface, making it a universal fallback option.
+
+
 ## Installation
 
 ### Windows
@@ -116,7 +126,7 @@ MCUViewer is distributed under the EULA License. The license is available [onlin
 * MacOS: `Applications/MCUViewer/Contents/Resources`
 
 ```{note}
-MCUViewer may not support all microcontroller targets supported by STMicroelectronics' ST-Link tools when using the STLink debug probe. Users are responsible for verifying compatibility with their target device before purchase or deployment. 
+MCUViewer may not support all microcontroller targets. Users are responsible for verifying compatibility with their target device before purchase or deployment. 
 ```
 
 For questions regarding licensing, contact contact@mcuviewer.com. 

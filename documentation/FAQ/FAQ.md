@@ -96,7 +96,7 @@ Paid tiers remove these limitations, enabling you to sample more signals. They a
 
    Make sure STLink udevrules are present in `/etc/udev/rules.d/`. Call `sudo udevadm control --reload-rules` and `sudo udevadm trigger` to reload the rules.
 
-3. **I'm using probe X. Is it supported by MCUViewer?**
+3. **I'm using probe X and MCU Y. Is it supported by MCUViewer?**
 
    Currently MCUViewer is compatible with JLink and STLink probes. If you're using a different probe please use the GDB server probe setup described in the {ref}`AcquisitionSettings` page. In case you're using a less popular MCU the [serial driver](SerialDriver) might be the best option.
 
@@ -110,4 +110,4 @@ Known issues are always listed in respect to the latest version of MCUViewer.
 
 2. **C2000 family \*.elf file parsing issues.**
 
-   Currently, GDB is used for parsing the *.elf output file. Due to TI's custom DWARF extensions there are problems while parsing variables with `const`/`volatile` keywords and enums. Current fix is to remove the keywords or rewrite the variable value to a non-const/non-volatile one, and use original types instead of typedef enum. This will be fixed in the future.
+   Currently, GDB is used for parsing the *.elf output file. Due to TI's custom DWARF extensions there are problems while parsing variables with `const`/`volatile` keywords. Current fix is to remove the keywords or assign the variable value to a non-const/non-volatile one. This will be fixed in the upcoming MCUViewer versions.

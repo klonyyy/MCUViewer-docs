@@ -2,7 +2,7 @@
 (AcquisitionSettings)=
 # Acquisition Settings
 
-Acquisition settings window is used to control the acquisition. 
+Acquisition settings window is used to control the acquisition. Open by selecting `Options->Acquisition` from the top menu.
 
 ## General section
 
@@ -71,6 +71,9 @@ The exact same GDB server can be used to download the new firmware so that no se
 
 This can be highly automated in a workflow described in {ref}`Examples` section.
 
+## Serial probe section
+
+Serial probe can be used if your probe is not natively supported by MCUViewer, even with GDB server - this is the case for example with C2000 probes. The serial probe requires some setup on the target side that can be found in the {ref}`SerialDriver` section and {ref}`Examples` section.
 
 ## Recorder section
 
