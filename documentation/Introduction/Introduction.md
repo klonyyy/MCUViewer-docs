@@ -18,7 +18,7 @@ MCUViewer natively supports the following interfaces:
 - J-Link
 - OpenOCD-compatible probes (via GDB server; not all are fully tested)
 
-If your probe is not natively supported by MCUViewer (for example, TI C2000 probes), you can use the [Serial Driver](SerialDriver) solution instead. This allows MCUViewer to communicate with any target device that provides a serial interface, making it a universal fallback option.
+If your probe is not natively supported by MCUViewer (for example, TI C2000 probes), you can use the [Serial Driver](#SerialDriver) solution instead. This allows MCUViewer to communicate with any target device that provides a serial interface, making it a universal fallback option.
 
 
 ## Installation

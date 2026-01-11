@@ -5,11 +5,11 @@ The Variable Viewer module allows you to visualize the values of variables in re
 
 Variable Viewer window consists of five main parts:
 
-1. [Control panel](ControlPanel) - main control panel
-2. [Variable table](VariableTable) - imported variables will show up here
-3. [Plot group tree](PlotGroupTree) - list of all groups and plots
-4. [Plot settings](PlotSettings) - settings for currently selected plot
-5. [Plot canvas](PlotCanvas) - plots are drawn here
+1. [Control panel](#ControlPanel) - main control panel
+2. [Variable table](#VariableTable) - imported variables will show up here
+3. [Plot group tree](#PlotGroupTree) - list of all groups and plots
+4. [Plot settings](#PlotSettings) - settings for currently selected plot
+5. [Plot canvas](#PlotCanvas) - plots are drawn here
 
 ```{figure} ./images/VarViewer.png
 :width: 1000px
@@ -202,7 +202,7 @@ New variable value can be written when the write field is focused and enter key 
 
 Curve plot manipulation is done using mouse - drag to pan, scroll to zoom, right click to open context menu. Right click and drag allows to select a zoom window. Double left click adjusts the scale to fit the data. 
 
-```{Warning}
+```{warning}
 Zooming and dragging is not possible during the acquisition.
 ```
 

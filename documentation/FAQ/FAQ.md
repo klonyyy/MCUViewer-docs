@@ -98,7 +98,7 @@ Paid tiers remove these limitations, enabling you to sample more signals. They a
 
 3. **I'm using probe X and MCU Y. Is it supported by MCUViewer?**
 
-   Currently MCUViewer is compatible with JLink and STLink probes. If you're using a different probe please use the GDB server probe setup described in the {ref}`AcquisitionSettings` page. In case you're using a less popular MCU the [serial driver](SerialDriver) might be the best option.
+   Currently MCUViewer is compatible with JLink and STLink probes. If you're using a different probe please use the GDB server probe setup described in the {ref}`AcquisitionSettings` page. In case you're using a less popular MCU the [Serial Driver](#SerialDriver) might be the best option.
 
 ## Known issues and limitations
 

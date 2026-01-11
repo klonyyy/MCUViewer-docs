@@ -3,7 +3,7 @@
 
 Serial driver allows you to use a serial port for communication in case the debug probe of your target is not supported or cannot be used due to lack of galvanic isolation or high EMI pollution. 
 
-Using serial driver is more intrusive than using debug probe direct memory readout, however in some applications it is the only option. The serial driver works with both [Variable Viewer](VariableViewer) and [Recorder](Recorder) modules.
+Using serial driver is more intrusive than using debug probe direct memory readout, however in some applications it is the only option. The serial driver works with both [Variable Viewer](#VariableViewer) and [Recorder](#Recorder) modules.
 
 ```{warning}
 
@@ -77,7 +77,7 @@ The target MCU may need to be reset after a failed detection at an incorrect bau
 
 ## Serial driver profiling
 
-Since serial driver is invasive, i.e. it takes some of the CPU processing time it is recommended to check the CPU load on your application. Below are the profiling results using [trace viewer](TraceViewer) for STM32G4 target running at 150Mhz.
+Since serial driver is invasive, i.e. it takes some of the CPU processing time it is recommended to check the CPU load on your application. Below are the profiling results using [Trace Viewer](#TraceViewer) for STM32G4 target running at 150Mhz.
 
 ```{note}
 On targets that lack SWO support profiling can be done using a simple GPIO toggling and oscilloscope readout. TraceViewer is preferred due to it's multi channel nature and ease of use. 

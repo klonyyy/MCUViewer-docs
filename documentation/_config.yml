@@ -24,3 +24,7 @@ repository:
 html:
   pygments_style: monokai
   favicon: "_static/favicon.png"
+  theme:
+    name: sphinx_book_theme
+  extra_css:
+    - "_static/custom.css"

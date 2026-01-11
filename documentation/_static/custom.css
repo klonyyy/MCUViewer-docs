@@ -2,3 +2,8 @@
 .bd-sidebar {
     overflow-y: hidden !important;
 }
+
+/* Ustaw font jak w Book 1 */
+body, h1, h2, h3, h4, h5, h6, p, li, a {
+    font-family: "Source Sans Pro", sans-serif;
+}
