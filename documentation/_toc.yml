@@ -1,16 +1,16 @@
 format: jb-book
-root: Introduction/Introduction
+root: Introduction/Introduction.md
 
 chapters:
-- file: VariableViewer/VariableViewer
-- file: TraceViewer/TraceViewer
-- file: Recorder/Recorder
-- file: SerialDriver/SerialDriver
-- file: AcquisitionSettings/AcquisitionSettings
-- file: GeneralSettings/GeneralSettings
-- file: FAQ/FAQ
+- file: VariableViewer/VariableViewer.md
+- file: TraceViewer/TraceViewer.md
+- file: Recorder/Recorder.md
+- file: SerialDriver/SerialDriver.md
+- file: AcquisitionSettings/AcquisitionSettings.md
+- file: GeneralSettings/GeneralSettings.md
+- file: FAQ/FAQ.md
 
-- file: Examples/Examples
+- file: Examples/Examples.md
   sections:
-    - file: Examples/C2000/C2000
-    - file: Examples/GDBServer/GDBServer
+    - file: Examples/C2000/C2000.md
+    - file: Examples/GDBServer/GDBServer.md
