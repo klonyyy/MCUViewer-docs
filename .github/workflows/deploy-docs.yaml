@@ -43,6 +43,9 @@ jobs:
           path: _build/.jupyter_cache
           key: jupyter-book-cache-${{ hashFiles('requirements.txt') }}
 
+      - name: List documentation folder
+        run: ls -lR documentation
+
       # Build the book
       - name: Build the book
         run: |
