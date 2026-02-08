@@ -38,7 +38,7 @@ while (true)
 ```
 this way we should be able to see a sine wave when we import sin_x in MCUViewer. 
 
-4. Compile and download the firmware using VScode. For easier download while using MCUViewer please follow the instructions in the {ref}`Flashing the firmware` section.
+4. Compile and download the firmware using VScode. For easier download while using MCUViewer please follow the instructions given in the next section.
 
 5. Start a new MCUViewer project, select the *.elf file and select GDB server as debug probe. Put the ip address 127.0.0.1 and port 3333 in the GDB server settings and close the window. 
 
@@ -53,7 +53,7 @@ this way we should be able to see a sine wave when we import sin_x in MCUViewer.
 
 `openocd -f interface/cmsis-dap.cfg -f ./rp2040.cfg -c "adapter speed 20000"`
 
-Note that we are using the copy of target config from step 1.This command should connect the probe to the target without halting it.
+Note that we are using the copy of target config from step 1. This command should connect the probe to the target without halting it.
 
 ```{figure} ./images/openOCD.png
 :width: 1000px
