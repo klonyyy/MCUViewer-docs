@@ -7,7 +7,7 @@ Using serial driver is more intrusive than using debug probe direct memory reado
 
 ```{warning}
 
-Currently serial driver is compatible only with MCUViewer 1.2.5 beta, which can be found [here](https://download.mcuviewer.com/releases/beta/).
+Currently serial driver is compatible with MCUViewer 1.2.5 beta and newer, which can be found [here](https://download.mcuviewer.com/releases/beta/).
 ```
 
 (SerialDriverSetup)=
