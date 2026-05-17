@@ -5,15 +5,16 @@ If you continue to experience any of the issues listed below, please contact us 
 
 ## License
 
-1. **What is the difference between free and paid tier?**
+1. **What is the difference between free and enterprise plans?**
 
-   The main difference is that MCUViewer Free cannot be used in commercial environments. In addition, there are two functional limitations in the free version compared to the paid version:
+   MCUViewer free cannot be used in commercial environments and comes with the following limitations:
+   1. Limitation on simultaneously sampled variables
+   1. Limitation on Recorder variables
+   2. Limitation on Trace channels
+   3. Limitation on screenshots 
+   4. No official support in case of issues or setup problems
 
-   - MCUViewer free limits the number of simultaneously sampled recorder variables to 5. This limit does not apply to the table plot in the Recorder group, where you can still use unlimited number of variables.
-
-   - MCUViewer free limits the number of simultaneously sampled trace channels to 5.
-
-Paid tiers remove these limitations, enabling you to sample more signals. They also include full support and prioritized bug fixes for you and your team. MCUViewer Standard is offered at a lower price point, tailored for startups and small organizations (up to 5 employees), while MCUViewer Enterprise is designed for larger organizations and is priced on a per-case basis. Please contact us at contact@mcuviewer.com to learn more.
+   It is possible to purchase a seat-based license or offline license for more users. Please contact us at contact@mcuviewer.com to learn more about licencing terms. 
 
 ## Variable Viewer
 
@@ -47,15 +48,18 @@ Paid tiers remove these limitations, enabling you to sample more signals. They a
 
 7. **The import variables dialog shows incorrect array elements.**
 
-   Currently the import dialog will show the arrays as "name" + [size]. The index has to be typed in manually. 
+   Currently the import dialog will show the arrays as "name[size]". The index has to be typed in manually. Copying the array variable will automatically increase the index. 
 
-8. **I'm using a STLink probe and my target is not found - I cannot connect ot my target**
+8. **I'm using a STLink probe and my target is not found - I cannot connect to my target**
 
    First make sure that you're able to connect to the target with other programs such as CubeProgrammer. If the target is detected correctly please contact us at contact@mcuviewer.com. 
 
    ```{note}
    MCUViewer may not support all microcontroller targets supported by STMicroelectronics' ST-Link tools when using the STLink debug probe. Users are responsible for verifying compatibility with their target device before purchase or deployment. 
    ```
+9. **I'm using serial probe and the update rate is low.**
+
+   Please see the [serial low update rate](SerialLowUpdateRate) section for possible solutions depending on the platform you're running on. 
 
 ## Recorder 
 
@@ -111,3 +115,7 @@ Known issues are always listed in respect to the latest version of MCUViewer.
 2. **C2000 family \*.elf file parsing issues.**
 
    Currently, GDB is used for parsing the *.elf output file. Due to TI's custom DWARF extensions there are problems while parsing variables with `const`/`volatile` keywords. Current fix is to remove the keywords or assign the variable value to a non-const/non-volatile one. This will be fixed in the upcoming MCUViewer versions.
+
+3. **Cube programmer STLink probe is slow on MacOS**
+
+   This issue is only present on MacOS when STLINK (CubeProgrammer) is selected. It's under investigation for a fix. 

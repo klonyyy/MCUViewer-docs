@@ -5,11 +5,6 @@ Serial driver allows you to use a serial port for communication in case the debu
 
 Using serial driver is more intrusive than using debug probe direct memory readout, however in some applications it is the only option. The serial driver works with both [Variable Viewer](#VariableViewer) and [Recorder](#Recorder) modules.
 
-```{warning}
-
-Currently serial driver is compatible with MCUViewer 1.2.5 beta and newer, which can be found [here](https://download.mcuviewer.com/releases/beta/).
-```
-
 (SerialDriverSetup)=
 ## Serial driver setup
 
@@ -74,6 +69,27 @@ Next make sure the target is connected, powered on and click the "Detect serial"
 ```{warning}
 The target MCU may need to be reset after a failed detection at an incorrect baud rate before another attempt to detect the serial driver can be made.
 ```
+(SerialLowUpdateRate)=
+## Serial low update rate
+
+When observing update rate issues first make sure your USB to UART converter is fast enough for the selected baudrate. If it is suitable then depending on the system you're running on there might be different solutions: 
+
+### Windows
+
+Please follow the gif below and change your converter's settings in the device manager: 
+
+```{figure} ./images/Speedup.png
+:width: 1000px
+:align: center
+```
+
+### Linux
+
+- Check the actual latency:
+`cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer`
+- Edit file: `/etc/udev/rules.d/99-usb-serial-latency.rules` and add `ACTION=="add", SUBSYSTEM=="usb-serial", KERNEL=="ttyUSB*", ATTR{latency_timer}="1"`
+- Reload `sudo udevadm control --reload-rules` `sudo udevadm trigger`, or log out
+
 
 ## Serial driver profiling
 
