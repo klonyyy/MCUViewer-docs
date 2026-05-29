@@ -78,7 +78,7 @@ When observing update rate issues first make sure your USB to UART converter is 
 
 Please follow the gif below and change your converter's settings in the device manager: 
 
-```{figure} ./images/Speedup.png
+```{figure} ./images/Speedup.gif
 :width: 1000px
 :align: center
 ```

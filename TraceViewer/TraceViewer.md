@@ -68,7 +68,7 @@ The channels list allows you to select channels and access their quick settings.
 (ChannelsCanvas)=
 ## Channels canvas
 
-Channels canvas is where all plots are drawn. The same plot manipulation rules apply as in {ref}"VariableViewer", with the exception that there is only one plot type - curve. 
+Channels canvas is where all plots are drawn. The same plot manipulation rules apply as in {ref}'VariableViewer', with the exception that there is only one plot type - curve. 
 
 
 ## Setup
