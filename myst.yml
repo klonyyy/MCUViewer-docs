@@ -15,8 +15,10 @@ project:
     - file: Recorder/Recorder.md
     - file: SerialDriver/SerialDriver.md
     - file: AcquisitionSettings/AcquisitionSettings.md
+    - file: Flashing/Flashing.md
     - file: GeneralSettings/GeneralSettings.md
     - file: FAQ/FAQ.md
+    - file: MCPServer/MCPServer.md
     - file: Examples/Examples.md
       children:
         - file: Examples/C2000/C2000.md

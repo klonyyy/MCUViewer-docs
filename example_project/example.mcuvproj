@@ -9,7 +9,7 @@ version = 2
 sample_frequency_hz = 1000
 max_points = 10000
 max_viewport_points = 500
-viewport_width_ms = 500,000000
+viewport_width_ms = 500.000000
 refresh_on_elf_change = true
 stop_acq_on_elf_change = true
 probe_type = 1
@@ -31,15 +31,23 @@ jlink_script_enabled = false
 jlink_script_path = 
 jlink_connection_type = 0
 cubeprog_api_path = 
+mcp_server_port = 8765
+
+[flashing]
+file_path = C:\Users\klonyyy\PROJECTS\MCUViewer_\code\MCUViewer-private\example\MCUViewer_test\flash.jlink
+command = "C:\Program Files\SEGGER\JLink_V942\JLink.exe"  -autoconnect 1 -commandfile {file}
+use_elf_file = false
+timeout_enabled = true
+timeout_seconds = 10
 
 [trace_settings]
 core_frequency = 150000
 trace_prescaler = 10
 max_points = 10000
 max_viewport_points_percent = 10
-viewport_width_ms = 5,000000
+viewport_width_ms = 5.000000
 trigger_channel = -1
-trigger_level = 0,000000
+trigger_level = 0.000000
 timeout = 2
 probe_type = 0
 target_name = STM32G474CB
@@ -58,11 +66,12 @@ should_update_from_elf = true
 shift = 5
 mask = 1
 high_level_type = 0
-value_to_write = 0,000000
+value_to_write = 0.000000
+secondary_value_to_write = 0.000000
 do_not_interpret_as_enum = false
 write_limits_enabled = false
-write_limit_min = 0,000000
-write_limit_max = 0,000000
+write_limit_min = -1.000000
+write_limit_max = 1.000000
 
 [var1]
 name = test.a
@@ -74,11 +83,12 @@ should_update_from_elf = true
 shift = 0
 mask = 4294967295
 high_level_type = 0
-value_to_write = 0,000000
+value_to_write = 0.000000
+secondary_value_to_write = 0.000000
 do_not_interpret_as_enum = false
 write_limits_enabled = false
-write_limit_min = 0,000000
-write_limit_max = 0,000000
+write_limit_min = -1.000000
+write_limit_max = 1.000000
 
 [var2]
 name = test.b
@@ -90,11 +100,12 @@ should_update_from_elf = true
 shift = 0
 mask = 4294967295
 high_level_type = 0
-value_to_write = 0,000000
+value_to_write = 0.000000
+secondary_value_to_write = 0.000000
 do_not_interpret_as_enum = false
 write_limits_enabled = false
-write_limit_min = 0,000000
-write_limit_max = 0,000000
+write_limit_min = -1.000000
+write_limit_max = 1.000000
 
 [var3]
 name = test.c
@@ -106,11 +117,12 @@ should_update_from_elf = true
 shift = 0
 mask = 4294967295
 high_level_type = 0
-value_to_write = 0,000000
+value_to_write = 0.000000
+secondary_value_to_write = 0.000000
 do_not_interpret_as_enum = false
 write_limits_enabled = false
-write_limit_min = 0,000000
-write_limit_max = 0,000000
+write_limit_min = -1.000000
+write_limit_max = 1.000000
 
 [var4]
 name = test.errorWord
@@ -122,11 +134,12 @@ should_update_from_elf = true
 shift = 0
 mask = 4294967295
 high_level_type = 0
-value_to_write = 0,000000
+value_to_write = 0.000000
+secondary_value_to_write = 0.000000
 do_not_interpret_as_enum = false
 write_limits_enabled = false
-write_limit_min = 0,000000
-write_limit_max = 0,000000
+write_limit_min = -1.000000
+write_limit_max = 1.000000
 
 [var5]
 name = test.frac_i16
@@ -138,13 +151,14 @@ should_update_from_elf = true
 shift = 0
 mask = 4294967295
 high_level_type = 1
-value_to_write = 0,000000
+value_to_write = 0.000000
+secondary_value_to_write = 0.000000
 do_not_interpret_as_enum = false
 write_limits_enabled = false
-write_limit_min = 0,000000
-write_limit_max = 0,000000
+write_limit_min = -1.000000
+write_limit_max = 1.000000
 frac = 15
-base = 1,000000
+base = 1.000000
 base_variable = test.voltageBase
 
 [var6]
@@ -157,13 +171,14 @@ should_update_from_elf = true
 shift = 0
 mask = 4294967295
 high_level_type = 1
-value_to_write = 0,000000
+value_to_write = 0.000000
+secondary_value_to_write = 0.000000
 do_not_interpret_as_enum = false
 write_limits_enabled = false
-write_limit_min = 0,000000
-write_limit_max = 0,000000
+write_limit_min = -1.000000
+write_limit_max = 1.000000
 frac = 15
-base = 1,000000
+base = 1.000000
 base_variable = 
 
 [var7]
@@ -176,11 +191,12 @@ should_update_from_elf = true
 shift = 0
 mask = 4294967295
 high_level_type = 0
-value_to_write = 0,000000
+value_to_write = 0.000000
+secondary_value_to_write = 0.000000
 do_not_interpret_as_enum = false
 write_limits_enabled = false
-write_limit_min = 0,000000
-write_limit_max = 0,000000
+write_limit_min = -1.000000
+write_limit_max = 1.000000
 
 [var8]
 name = test.structA.a
@@ -192,11 +208,12 @@ should_update_from_elf = true
 shift = 0
 mask = 4294967295
 high_level_type = 0
-value_to_write = 0,000000
+value_to_write = 0.000000
+secondary_value_to_write = 0.000000
 do_not_interpret_as_enum = false
 write_limits_enabled = false
-write_limit_min = 0,000000
-write_limit_max = 0,000000
+write_limit_min = -1.000000
+write_limit_max = 1.000000
 
 [var9]
 name = test.structA.b
@@ -208,11 +225,12 @@ should_update_from_elf = true
 shift = 0
 mask = 4294967295
 high_level_type = 0
-value_to_write = 0,000000
+value_to_write = 0.000000
+secondary_value_to_write = 0.000000
 do_not_interpret_as_enum = false
 write_limits_enabled = false
-write_limit_min = 0,000000
-write_limit_max = 0,000000
+write_limit_min = -1.000000
+write_limit_max = 1.000000
 
 [var10]
 name = test.structA.e
@@ -224,11 +242,12 @@ should_update_from_elf = true
 shift = 0
 mask = 4294967295
 high_level_type = 0
-value_to_write = 0,000000
+value_to_write = 0.000000
+secondary_value_to_write = 0.000000
 do_not_interpret_as_enum = false
 write_limits_enabled = false
-write_limit_min = 0,000000
-write_limit_max = 0,000000
+write_limit_min = -1.000000
+write_limit_max = 1.000000
 
 [var11]
 name = test.voltageBase
@@ -240,11 +259,12 @@ should_update_from_elf = true
 shift = 0
 mask = 4294967295
 high_level_type = 0
-value_to_write = 0,000000
+value_to_write = 0.000000
+secondary_value_to_write = 0.000000
 do_not_interpret_as_enum = false
 write_limits_enabled = false
-write_limit_min = 0,000000
-write_limit_max = 0,000000
+write_limit_min = -1.000000
+write_limit_max = 1.000000
 
 [group0]
 name = new group0
