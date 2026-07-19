@@ -6,24 +6,24 @@ relative_path = true
 version = 2
 
 [settings]
-sample_frequency_hz = 1000
+sample_frequency_hz = 500
 max_points = 10000
 max_viewport_points = 500
 viewport_width_ms = 500.000000
 refresh_on_elf_change = true
 stop_acq_on_elf_change = true
-probe_type = 1
+probe_type = 2
 target_name = Cortex-M4
-probe_mode = 1
+probe_mode = 0
 probe_speed_khz = 10000
-probe_sn = 506003225
+probe_sn = remote
 should_log = false
 log_directory = 
 gdb_command = ./gdb
 elf_parser = gdb
 recorder_enabled = false
 restart_on_group_change = true
-keep_connection = true
+keep_connection = false
 ip_address = 127.0.0.1
 port = 3333
 probe_baudrate = 115200
@@ -34,9 +34,9 @@ cubeprog_api_path =
 mcp_server_port = 8765
 
 [flashing]
-file_path = C:\Users\klonyyy\PROJECTS\MCUViewer_\code\MCUViewer-private\example\MCUViewer_test\flash.jlink
-command = "C:\Program Files\SEGGER\JLink_V942\JLink.exe"  -autoconnect 1 -commandfile {file}
-use_elf_file = false
+file_path = 
+command = openocd -f interface/stlink.cfg -f target/stm32g4x.cfg -c "program {{file}} verify reset exit"
+use_elf_file = true
 timeout_enabled = true
 timeout_seconds = 10
 
@@ -308,6 +308,27 @@ type = 3
 visibility = false
 secondary_write_enabled = true
 x_axis_variable = _____time_____
+
+[group1]
+name = new sampling group0
+acquisition_type = 0
+
+[group1-plot0]
+name = new plot0
+type = 0
+visibility = true
+secondary_write_enabled = false
+
+[group1-plot0-series0]
+name = test.structA.a
+visibility = true
+format = DEC
+
+[group1-plot1]
+name = new table0
+type = 2
+visibility = true
+secondary_write_enabled = false
 
 [trace_plot0]
 name = CH0

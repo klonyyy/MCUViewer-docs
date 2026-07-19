@@ -20,7 +20,6 @@ MCUViewer natively supports the following interfaces:
 
 If your probe is not natively supported by MCUViewer (for example, TI C2000 probes), you can use the [Serial Driver](#SerialDriver) solution instead. This allows MCUViewer to communicate with any target device that provides a serial interface, making it a universal fallback option.
 
-
 ## Installation
 
 ### Windows
@@ -119,7 +118,7 @@ In case of any errors please visit {ref}`TraceViewer` and {ref}`FAQ`
 
 ## License
 
-MCUViewer is distributed under the EULA License. The license is available [online](https://download.mcuviewer.com/docs/website/EULA.txt) and after installation in:
+MCUViewer is distributed under the EULA License. The license is available [online](https://mcuviewer.com/legal/eula/) and after installation in:
 
 * Windows: `C:\Program Files\MCUViewer\bin`
 * Linux: `/usr/local/MCUViewer`

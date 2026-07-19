@@ -20,7 +20,7 @@ If you continue to experience any of the issues listed below, please contact us 
 
 1. **My variable is not listed in the import dialog.**
 
-   First, make sure the variable is global, i.e., it has a constant address throughout the entire lifetime of your program. Next, check the type of your variable-if it's a pointer, it won't be detected. You can try creating a new variable by right-clicking in the variable table area and selecting `New ->Variable`. Set the name manually and close the window. If the variable is detected, the address will change from "NOT FOUND!" to a valid address.
+   First, make sure the variable is global, i.e., it has a constant address throughout the entire lifetime of your program. Next, check the type of your variable - if it's a pointer, it won't be detected. You can try creating a new variable by right-clicking in the variable table area and selecting `New ->Variable`. Set the name manually and close the window. If the variable is detected, the address will change from "NOT FOUND!" to a valid address.
 
    ```{note}
    uint64_t and double variables are currently not supported
@@ -52,14 +52,14 @@ If you continue to experience any of the issues listed below, please contact us 
 
 8. **I'm using a STLink probe and my target is not found - I cannot connect to my target**
 
-   First make sure that you're able to connect to the target with other programs such as CubeProgrammer. If the target is detected correctly please contact us at contact@mcuviewer.com. 
+   First make sure that you're able to connect to the target with other programs such as CubeProgrammer. If the target is detected correctly you can use the STLINK (CUBE PROGRAMMER) debug probe or GDBSERVER. For GDBSERVER probe please see the short tutorial: [STM32 OpenOCD example](#STM32OpenOCDExample)
 
    ```{note}
    MCUViewer may not support all microcontroller targets supported by STMicroelectronics' ST-Link tools when using the STLink debug probe. Users are responsible for verifying compatibility with their target device before purchase or deployment. 
    ```
 9. **I'm using serial probe and the update rate is low.**
 
-   Please see the [serial low update rate](SerialLowUpdateRate) section for possible solutions depending on the platform you're running on. 
+   Please see the [serial low update rate](#SerialLowUpdateRate) section for possible solutions depending on the platform you're running on. 
 
 ## Recorder 
 
@@ -102,7 +102,7 @@ If you continue to experience any of the issues listed below, please contact us 
 
 3. **I'm using probe X and MCU Y. Is it supported by MCUViewer?**
 
-   Currently MCUViewer is compatible with JLink and STLink probes. If you're using a different probe please use the GDB server probe setup described in the {ref}`AcquisitionSettings` page. In case you're using a less popular MCU the [Serial Driver](#SerialDriver) might be the best option.
+   Currently MCUViewer is natively compatible with JLink and STLink probes. If you're using a different probe please use the GDBSERVER probe setup described in the {ref}`AcquisitionSettings` page. In case you're using a less popular MCU the [Serial Driver](#SerialDriver) might be the best option.
 
 ## Known issues and limitations
 
@@ -114,8 +114,8 @@ Known issues are always listed in respect to the latest version of MCUViewer.
 
 2. **C2000 family \*.elf file parsing issues.**
 
-   Currently, GDB is used for parsing the *.elf output file. Due to TI's custom DWARF extensions there are problems while parsing variables with `const`/`volatile` keywords. Current fix is to remove the keywords or assign the variable value to a non-const/non-volatile one. This will be fixed in the upcoming MCUViewer versions.
+   Currently, GDB is used for parsing the *.elf output file. Due to TI's custom DWARF extensions there are problems while parsing variables with `const`/`volatile` keywords. Current fix is to remove the keywords or assign the variable value to a non-const/non-volatile one. For improved parsing please use MCUViewer 1.2.9 and later.
 
 3. **Cube programmer STLink probe is slow on MacOS**
 
-   This issue is only present on MacOS when STLINK (CubeProgrammer) is selected. It's under investigation for a fix. 
+   This issue is only present on MacOS when STLINK (CubeProgrammer) is selected. It's under investigation for a fix. As a replacement please use the [GDBSERVER](#STM32OpenOCDExample)

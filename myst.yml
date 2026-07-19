@@ -23,6 +23,7 @@ project:
       children:
         - file: Examples/C2000/C2000.md
         - file: Examples/GDBServer/GDBServer.md
+        - file: Examples/STM32_OpenOCD/STM32_OpenOCD.md
     
 site:
   template: book-theme
