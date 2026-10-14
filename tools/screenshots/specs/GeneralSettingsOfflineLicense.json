@@ -1,0 +1,8 @@
+{
+  "image": "raw/GeneralSettings.png",
+  "output": "GeneralSettings/images/GeneralSettingsOfflineLicense.drawio",
+  "callouts": [
+    {"n": 1, "circle": [660, 250], "target": [820, 325]},
+    {"n": 2, "circle": [660, 352], "target": [300, 351]}
+  ]
+}

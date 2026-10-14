@@ -1,0 +1,8 @@
+{
+  "image": "raw/RecorderSettings.png",
+  "output": "Recorder/images/RecorderSettings.drawio",
+  "callouts": [
+    {"n": 1, "circle": [640, 515], "target": [430, 596]},
+    {"n": 2, "circle": [760, 515], "target": [552, 596]}
+  ]
+}

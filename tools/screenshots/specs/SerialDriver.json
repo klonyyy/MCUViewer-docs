@@ -1,0 +1,11 @@
+{
+  "image": "raw/SerialDriver.png",
+  "output": "SerialDriver/images/SerialDriver.drawio",
+  "callouts": [
+    {"n": 1, "circle": [640, 115], "target": [330, 239]},
+    {"n": 2, "circle": [640, 175], "target": [330, 265]},
+    {"n": 3, "circle": [640, 235], "target": [330, 291]},
+    {"n": 4, "circle": [640, 300], "target": [800, 291]},
+    {"n": 5, "circle": [640, 360], "target": [520, 317]}
+  ]
+}

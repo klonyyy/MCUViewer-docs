@@ -72,6 +72,10 @@ Note that we are using the copy of target config from step 1. This command shoul
 
 Flashing each new firmware can be made easy by creating a custom task in the tasks.json file - this way we will attach to the openOCD that we've run previously and download the compiled firmware with a single click. 
 
+```{note}
+The same script can also be run directly from MCUViewer with the `Flash` button - set it as the flash command in `Options->Flashing` (see {ref}`Flashing`), e.g. `python <full_path_to_project>/flash_openocd.py {file}`.
+```
+
 1.  Add the following task to the tasks.json file:
 ```
         {

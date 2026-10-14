@@ -1,0 +1,8 @@
+{
+  "image": "raw/AddVariable.png",
+  "output": "VariableViewer/images/AddVariable.drawio",
+  "callouts": [
+    {"n": 1, "circle": [130, 90], "target": [172, 152]},
+    {"n": 2, "circle": [440, 578], "target": [382, 603]}
+  ]
+}

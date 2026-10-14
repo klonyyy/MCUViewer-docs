@@ -62,4 +62,4 @@ The command used in this example is:
 openocd -f interface/stlink.cfg -f target/stm32g4x.cfg -c "program {{file}} verify reset exit" 
 ```
 
-where {file} is just an internal macro, which MCUViewer autocompletes with the *.elf file selected for the project. 
+where {file} is just an internal macro, which MCUViewer autocompletes with the *.elf file selected for the project. The additional pair of braces around it is Tcl quoting for OpenOCD, so that Windows paths with backslashes are passed correctly. 

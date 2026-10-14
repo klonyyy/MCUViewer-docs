@@ -1,0 +1,12 @@
+{
+  "image": "raw/TraceViewerControlPanel.png",
+  "output": "TraceViewer/images/TraceViewerControlPanel.drawio",
+  "callouts": [
+    {"n": 1, "circle": [640, 100], "target": [500, 185]},
+    {"n": 2, "circle": [640, 160], "target": [500, 211]},
+    {"n": 3, "circle": [640, 220], "target": [500, 237]},
+    {"n": 4, "circle": [640, 280], "target": [500, 263]},
+    {"n": 5, "circle": [640, 340], "target": [500, 289]},
+    {"n": 6, "circle": [640, 400], "target": [226, 315]}
+  ]
+}

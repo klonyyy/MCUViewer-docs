@@ -31,7 +31,7 @@ or STLink probe:
 
 ## Flashing from the main window
 
-Once a flash command is configured, a `Flash` button becomes active on the main toolbar next to `Import variables` and `Refresh addresses`. Clicking it stops and disconnects the current acquisition (if running) and runs the configured flash command. The command output is shown in a popup window once flashing completes.
+Once a flash command is configured, a `Flash` button becomes active on the main toolbar next to `Import variables` and `Refresh addresses`. Clicking it stops and disconnects the current acquisition (if running) and runs the configured flash command. The live command output is shown in a popup window, where flashing can also be aborted. The popup closes automatically after a successful flash - in case of an error it stays open with the full output.
 
 ```{note}
 If MCUViewer detects that the *.elf file has changed, the `Flash` button is highlighted with a "Flash updated file" label as a reminder to reflash before continuing. See `Stop on *.elf change` in {ref}`AcquisitionSettings`.

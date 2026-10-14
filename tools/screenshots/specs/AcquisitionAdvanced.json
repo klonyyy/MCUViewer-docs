@@ -1,0 +1,9 @@
+{
+  "image": "raw/AcquisitionSettings.png",
+  "output": "AcquisitionSettings/images/AcquisitionAdvanced.drawio",
+  "callouts": [
+    {"n": 1, "circle": [1192, 680], "target": [662, 742]},
+    {"n": 2, "circle": [1192, 745], "target": [720, 768]},
+    {"n": 3, "circle": [1192, 810], "target": [720, 794]}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "image": "raw/Flashing.png",
+  "output": "Flashing/images/Flashing.drawio",
+  "callouts": [
+    {"n": 1, "circle": [1100, 296], "target": [1012, 358]},
+    {"n": 2, "circle": [1100, 358], "target": [425, 384]},
+    {"n": 3, "circle": [1100, 420], "target": [1000, 410]},
+    {"n": 4, "circle": [1100, 482], "target": [700, 436]},
+    {"n": 5, "circle": [740, 437], "target": [476, 462]}
+  ]
+}

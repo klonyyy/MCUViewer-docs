@@ -1,0 +1,214 @@
+{
+  "format": "mcuviewer-project",
+  "schema_version": 3,
+  "app_version": "1.3.0",
+  "id": "241ce02d-63c3-4d5d-a9bb-88bec5040dde",
+  "elf": {
+    "path": "../../../code/MCUViewer-private/example/STM32/MCUViewer_test/Debug/MCUViewer_test.elf"
+  },
+  "viewer": {
+    "viewport_width_ms": 500.0,
+    "probe": {
+      "device": "Cortex-M4",
+      "serial": {
+        "baudrate": 230400
+      }
+    }
+  },
+  "flashing": {
+    "command": "openocd -f interface/stlink.cfg -f target/stm32g4x.cfg -c \"program {{file}} verify reset exit\"",
+    "use_elf_file": true,
+    "timeout_enabled": true,
+    "timeout_s": 10
+  },
+  "trace": {
+    "core_frequency_khz": 150000,
+    "viewport_width_ms": 80.0,
+    "trigger_level": 0.0,
+    "probe": {
+      "device": "STM32G474CB"
+    },
+    "channels": [
+      {
+        "name": "CH0"
+      },
+      {
+        "name": "CH1"
+      },
+      {
+        "name": "CH2",
+        "visible": false
+      },
+      {
+        "name": "CH3",
+        "visible": false
+      },
+      {
+        "name": "CH4",
+        "domain": "analog"
+      },
+      {
+        "name": "CH5",
+        "visible": false
+      },
+      {
+        "name": "CH6",
+        "visible": false
+      },
+      {
+        "name": "CH7",
+        "visible": false
+      },
+      {
+        "name": "CH8",
+        "visible": false
+      },
+      {
+        "name": "CH9",
+        "visible": false
+      }
+    ]
+  },
+  "machine": {
+    "viewer_probe_serial": "002B001F3431511531343632",
+    "trace_probe_serial": "002B001F3431511531343632"
+  },
+  "variables": [
+    {
+      "name": "ErrorOvervoltage",
+      "tracked_name": "test.errorWord",
+      "address": "0x2001D7C0",
+      "type": "u32",
+      "color": "#47C99583",
+      "shift": 5,
+      "mask": "0x00000001"
+    },
+    {
+      "name": "test.a",
+      "address": "0x2001D7AC",
+      "type": "f32",
+      "color": "#009007B5"
+    },
+    {
+      "name": "test.b",
+      "address": "0x2001D7B0",
+      "type": "f32",
+      "color": "#D83C0002"
+    },
+    {
+      "name": "test.c",
+      "address": "0x2001D7B4",
+      "type": "f32",
+      "color": "#00FFEEC5"
+    },
+    {
+      "name": "test.errorWord",
+      "address": "0x2001D7C0",
+      "type": "u32",
+      "color": "#A53168E3"
+    },
+    {
+      "name": "test.frac_i16",
+      "address": "0x2001D868",
+      "type": "i16",
+      "color": "#8222C831",
+      "interpretation": "signed_frac",
+      "fractional": {
+        "base_variable": "test.voltageBase"
+      }
+    },
+    {
+      "name": "test.frac_i16_FR",
+      "tracked_name": "test.frac_i16",
+      "address": "0x2001D868",
+      "type": "i16",
+      "color": "#91EEE640",
+      "interpretation": "signed_frac"
+    },
+    {
+      "name": "test.frac_i8",
+      "address": "0x2001D865",
+      "type": "i8",
+      "color": "#ABEA1046"
+    },
+    {
+      "name": "test.structA.a",
+      "address": "0x2001D845",
+      "type": "u8",
+      "color": "#09A7A1A5"
+    },
+    {
+      "name": "test.structA.b",
+      "address": "0x2001D846",
+      "type": "u8",
+      "color": "#1107CE5B"
+    },
+    {
+      "name": "test.structA.e",
+      "address": "0x2001D849",
+      "type": "u8",
+      "color": "#3D5DF964"
+    },
+    {
+      "name": "test.voltageBase",
+      "address": "0x2001D798",
+      "type": "f32",
+      "color": "#F59B0055"
+    }
+  ],
+  "groups": [
+    {
+      "name": "new group0",
+      "plots": [
+        {
+          "name": "control",
+          "type": "table",
+          "secondary_write_enabled": true,
+          "series": [
+            {
+              "variable": "test.errorWord"
+            }
+          ]
+        },
+        {
+          "name": "test",
+          "secondary_write_enabled": true,
+          "series": [
+            {
+              "variable": "test.a"
+            },
+            {
+              "variable": "test.b"
+            },
+            {
+              "variable": "test.c"
+            }
+          ]
+        },
+        {
+          "name": "test1",
+          "type": "xy",
+          "visible": false,
+          "secondary_write_enabled": true
+        }
+      ]
+    },
+    {
+      "name": "new sampling group0",
+      "plots": [
+        {
+          "name": "new plot0",
+          "series": [
+            {
+              "variable": "test.structA.a"
+            }
+          ]
+        },
+        {
+          "name": "new table0",
+          "type": "table"
+        }
+      ]
+    }
+  ]
+}

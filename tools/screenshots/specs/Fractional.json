@@ -1,0 +1,11 @@
+{
+  "image": "raw/Fractional.png",
+  "output": "VariableViewer/images/Fractional.drawio",
+  "callouts": [
+    {"n": 1, "circle": [190, 418], "target": [150, 384]},
+    {"n": 2, "circle": [1080, 330], "target": [700, 360]},
+    {"n": 3, "circle": [1080, 625], "target": [700, 662]},
+    {"n": 4, "circle": [1080, 685], "target": [700, 688]},
+    {"n": 5, "circle": [1080, 745], "target": [700, 714]}
+  ]
+}

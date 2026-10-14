@@ -52,14 +52,16 @@ void serialDriverSendData(uint16_t* buf, uint16_t size)     // <-------
 }
 ```
 
-After that, open the {ref}`AcquisitionSettings` window, and select the serial driver (1), serial port (2), and baud rate (3).
+After that, open the {ref}`AcquisitionSettings` window, and select `SERIAL` as the debug probe (1), the serial port (2), and the baud rate (3). If the port is not listed, connect the converter and click the refresh button next to it. The baud rate must match the one configured on the target.
 
 ```{figure} ./images/SerialDriver.png
 :width: 1000px
 :align: center
 ```
 
-Next make sure the target is connected, powered on and click the "Detect serial" button (4). It should detect the serial driver version and max variables from `serialDriverDefines.h` file like in the picture below. Any errors will be listed in the Status text box (5).
+Next make sure the target is connected, powered on and click the `Detect serial` button (4). It should detect the serial driver version and max variables from `serialDriverDefines.h` file like in the picture below. Any errors will be listed in the Status text box (5). If an older serial driver version is detected, the status asks you to update the serial driver files in your project.
+
+Make sure no other program (e.g. a serial terminal) keeps the port open.
 
 ```{figure} ./images/SerialDriverDetected.png
 :width: 1000px

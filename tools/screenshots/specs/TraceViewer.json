@@ -1,0 +1,16 @@
+{
+  "image": "raw/TraceViewer.png",
+  "output": "TraceViewer/images/TraceViewer.drawio",
+  "areas": [
+    {"rect": [8, 82, 552, 248]},
+    {"rect": [8, 338, 552, 186]},
+    {"rect": [8, 532, 552, 468]},
+    {"rect": [568, 60, 752, 944]}
+  ],
+  "callouts": [
+    {"n": 1, "circle": [340, 190]},
+    {"n": 2, "circle": [340, 405]},
+    {"n": 3, "circle": [340, 760]},
+    {"n": 4, "circle": [930, 520]}
+  ]
+}

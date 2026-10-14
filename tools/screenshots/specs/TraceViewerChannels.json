@@ -1,0 +1,11 @@
+{
+  "image": "raw/TraceViewer.png",
+  "output": "TraceViewer/images/TraceViewerChannels.drawio",
+  "callouts": [
+    {"n": 1, "circle": [640, 480], "target": [500, 569]},
+    {"n": 2, "circle": [640, 540], "target": [500, 595]},
+    {"n": 3, "circle": [640, 600], "target": [500, 621]},
+    {"n": 4, "circle": [930, 225]},
+    {"n": 5, "circle": [1150, 820]}
+  ]
+}

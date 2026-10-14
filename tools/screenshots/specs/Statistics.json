@@ -1,0 +1,10 @@
+{
+  "image": "raw/Statistics.png",
+  "output": "VariableViewer/images/Statistics.drawio",
+  "callouts": [
+    {"n": 1, "circle": [420, 615], "target": [345, 693]},
+    {"n": 2, "circle": [880, 136], "target": [790, 159]},
+    {"n": 3, "circle": [870, 195], "target": [612, 193]},
+    {"n": 4, "circle": [935, 430], "targets": [[842, 470], [1075, 470]]}
+  ]
+}

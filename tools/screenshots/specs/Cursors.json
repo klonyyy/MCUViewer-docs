@@ -1,0 +1,10 @@
+{
+  "image": "raw/Cursors.png",
+  "output": "VariableViewer/images/Cursors.drawio",
+  "callouts": [
+    {"n": 1, "circle": [420, 590], "target": [345, 667]},
+    {"n": 2, "circle": [670, 650], "target": [842, 690]},
+    {"n": 3, "circle": [1205, 232], "target": [1183, 201]},
+    {"n": 4, "circle": [775, 238], "target": [752, 200]}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "image": "raw/RecorderUsage.png",
+  "output": "Recorder/images/RecorderUsage.drawio",
+  "callouts": [
+    {"n": 1, "circle": [640, 580], "target": [530, 669]},
+    {"n": 2, "circle": [640, 640], "target": [500, 695]},
+    {"n": 3, "circle": [640, 700], "target": [500, 721]},
+    {"n": 4, "circle": [640, 760], "target": [500, 747]},
+    {"n": 5, "circle": [640, 820], "target": [500, 773]},
+    {"n": 6, "circle": [1200, 360], "target": [1150, 442]},
+    {"n": 7, "circle": [740, 280], "target": [702, 340]}
+  ]
+}

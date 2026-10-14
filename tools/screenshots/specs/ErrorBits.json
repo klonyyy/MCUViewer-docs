@@ -1,0 +1,10 @@
+{
+  "image": "raw/ErrorBits.png",
+  "output": "VariableViewer/images/ErrorBits.drawio",
+  "callouts": [
+    {"n": 1, "circle": [190, 262], "target": [155, 228]},
+    {"n": 2, "circle": [1080, 330], "target": [700, 360]},
+    {"n": 3, "circle": [1080, 545], "target": [700, 576]},
+    {"n": 4, "circle": [1080, 605], "target": [700, 602]}
+  ]
+}

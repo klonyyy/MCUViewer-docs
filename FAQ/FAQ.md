@@ -5,22 +5,26 @@ If you continue to experience any of the issues listed below, please contact us 
 
 ## License
 
-1. **What is the difference between free and enterprise plans?**
+1. **What is the difference between the plans?**
 
    MCUViewer free cannot be used in commercial environments and comes with the following limitations:
    1. Limitation on simultaneously sampled variables
-   1. Limitation on Recorder variables
-   2. Limitation on Trace channels
-   3. Limitation on screenshots 
-   4. No official support in case of issues or setup problems
+   2. Limitation on Recorder variables
+   3. Limitation on Trace channels
+   4. Limitation on screenshots 
+   5. No official support in case of issues or setup problems
 
-   It is possible to purchase a seat-based license or offline license for more users. Please contact us at contact@mcuviewer.com to learn more about licencing terms. 
+   The `COMMUNITY` plan is a non-commercial license without the limitations of the free plan. For commercial use `ENTERPRISE` license (offline or seat-based) and `PERPETUAL` license (bound to one computer, never expire, cover the updates released until the date given in the license) are available. The current plan is shown in the window title and in `Settings -> General`. Please see the [MCUViewer website](https://mcuviewer.com) or contact us at contact@mcuviewer.com to learn more about licensing terms. 
+
+2. **My perpetual license does not work after updating MCUViewer.**
+
+   A perpetual license covers the MCUViewer versions released until the date given in the license. If the installed version is newer, `Settings -> General` shows this in the `Expires` field together with a `Renew` button. After renewing, download the updated license and load it in `Settings -> General`.
 
 ## Variable Viewer
 
 1. **My variable is not listed in the import dialog.**
 
-   First, make sure the variable is global, i.e., it has a constant address throughout the entire lifetime of your program. Next, check the type of your variable - if it's a pointer, it won't be detected. You can try creating a new variable by right-clicking in the variable table area and selecting `New ->Variable`. Set the name manually and close the window. If the variable is detected, the address will change from "NOT FOUND!" to a valid address.
+   First, make sure the variable is global, i.e., it has a constant address throughout the entire lifetime of your program. Next, check the type of your variable - if it's a pointer, it won't be detected. You can try creating a new variable by right-clicking in the variable table area and selecting `New -> Variable`. Type the path to the variable in the `*.elf symbol` field (or pick it with the `...` button) and close the window. If the variable is detected, the address will change from "NOT FOUND!" to a valid address.
 
    ```{note}
    uint64_t and double variables are currently not supported
@@ -42,15 +46,15 @@ If you continue to experience any of the issues listed below, please contact us 
 
    Make sure you have installed the [JLink software pack](https://www.segger.com/downloads/jlink/).
 
-6. <b>I get "Update error! Please check *.elf file".</b>
+6. <b>I get "Update error. Please check the *.elf file path and parser settings!".</b>
 
-   Make sure both *.elf file path and the gdb command are correct (`Acquisition -> Advanced -> GDB command`). For default GDB on Windows and MacOS it should be `./gdb`, for system gdb it should be `gdb` (must be added to the path). Ubuntu distribution always defaults to system gdb (`gdb`), so please make sure it's installed. If you're working with C2000 *.elf files make sure to use GDB 14.2 or newer.
+   Make sure the *.elf file path is correct. When the GDB parser is used, make sure the gdb command is correct (`Acquisition -> Advanced -> GDB command`). For default GDB on Windows and MacOS it should be `./gdb`, for system gdb it should be `gdb` (must be added to the path). Ubuntu distribution always defaults to system gdb (`gdb`), so please make sure it's installed. Alternatively switch to the built-in `DWARF` parser, which does not need gdb at all. If you're working with C2000 *.elf files use the `C2000` parser (see {ref}`AcquisitionSettings`).
 
-7. **The import variables dialog shows incorrect array elements.**
+7. **The import variables dialog shows only the first array element.**
 
-   Currently the import dialog will show the arrays as "name[size]". The index has to be typed in manually. Copying the array variable will automatically increase the index. 
+   Currently the import dialog will show the arrays as "name[0]". After importing the index has to be typed in manually or the variable can be copied to increment the index. 
 
-8. **I'm using a STLink probe and my target is not found - I cannot connect to my target**
+8. **I'm using a STLink probe and my target is not found - I cannot connect to my target** 
 
    First make sure that you're able to connect to the target with other programs such as CubeProgrammer. If the target is detected correctly you can use the STLINK (CUBE PROGRAMMER) debug probe or GDBSERVER. For GDBSERVER probe please see the short tutorial: [STM32 OpenOCD example](#STM32OpenOCDExample)
 
@@ -69,7 +73,7 @@ If you continue to experience any of the issues listed below, please contact us 
 
 2. **The recorder module does not show any data.**
 
-   First, ensure that the recorder is detected correctly in the **Acquisition** settings window. If it is detected correctly, make sure that the mode referenced in {ref}`RecorderUsage` is set to `auto` so that the trigger is not needed for acquisition.
+   First, ensure that the recorder is detected correctly in the **Acquisition** settings window. If it is detected correctly, make sure that the mode referenced in {ref}`RecorderUsage` is set to `run` so that the trigger is not needed for acquisition.
 
 ## Trace Viewer
 
@@ -83,7 +87,7 @@ If you continue to experience any of the issues listed below, please contact us 
 
 3. **I get a lot of error frames and red markers on the plots.**
 
-   Most likely, the debug probe is not fast enough for the SWO output settings. Try increasing the prescaler and make sure the core frequency is set correctly.
+   Most likely, the debug probe is not fast enough for the SWO output settings. Try increasing the prescaler and make sure the core frequency is set correctly. After the first start the `SWO clock` field shows the maximum SWO clock of your probe - it turns red when the SWO clock is too high.
 
 4. **I get a lot of delayed frames and yellow markers on the plots.**
 
@@ -104,6 +108,10 @@ If you continue to experience any of the issues listed below, please contact us 
 
    Currently MCUViewer is natively compatible with JLink and STLink probes. If you're using a different probe please use the GDBSERVER probe setup described in the {ref}`AcquisitionSettings` page. In case you're using a less popular MCU the [Serial Driver](#SerialDriver) might be the best option.
 
+4. **How do I open a project from an older MCUViewer version?**
+
+   Open the *.mcuvproj file with `File -> Open`. MCUViewer 1.3.0 converts it to the new *.mcuv format and saves it next to the original file, which stays untouched. When a project saved by a newer MCUViewer version is opened, settings unknown to the current version would be dropped on save, so autosave is turned off for this project until you save it manually.
+
 ## Known issues and limitations
 
 Known issues are always listed in respect to the latest version of MCUViewer.
@@ -114,7 +122,7 @@ Known issues are always listed in respect to the latest version of MCUViewer.
 
 2. **C2000 family \*.elf file parsing issues.**
 
-   Currently, GDB is used for parsing the *.elf output file. Due to TI's custom DWARF extensions there are problems while parsing variables with `const`/`volatile` keywords. Current fix is to remove the keywords or assign the variable value to a non-const/non-volatile one. For improved parsing please use MCUViewer 1.2.9 and later.
+   Due to TI's custom DWARF extensions the `GDB` and `DWARF` parsers have problems parsing variables with `const`/`volatile` keywords. Please use the `C2000` parser (`Acquisition -> Advanced -> *.elf parser`), which uses TI's `ofd2000` tool - MCUViewer suggests it automatically when a C2000 *.elf file is selected.
 
 3. **Cube programmer STLink probe is slow on MacOS**
 

@@ -6,20 +6,21 @@ relative_path = true
 version = 2
 
 [settings]
-sample_frequency_hz = 500
+sample_frequency_hz = 5000
 max_points = 10000
 max_viewport_points = 500
 viewport_width_ms = 500.000000
 refresh_on_elf_change = true
 stop_acq_on_elf_change = true
-probe_type = 2
+probe_type = 1
 target_name = Cortex-M4
 probe_mode = 0
 probe_speed_khz = 10000
-probe_sn = remote
+probe_sn = 506003225
 should_log = false
 log_directory = 
 gdb_command = ./gdb
+ofd2000_command = 
 elf_parser = gdb
 recorder_enabled = false
 restart_on_group_change = true
@@ -269,6 +270,10 @@ write_limit_max = 1.000000
 [group0]
 name = new group0
 acquisition_type = 0
+override_sample_rate = true
+sample_frequency_hz = 10
+override_viewport_width = false
+viewport_width_ms = 10000.000000
 
 [group0-plot0]
 name = control
@@ -312,6 +317,10 @@ x_axis_variable = _____time_____
 [group1]
 name = new sampling group0
 acquisition_type = 0
+override_sample_rate = false
+sample_frequency_hz = 100
+override_viewport_width = false
+viewport_width_ms = 500.000000
 
 [group1-plot0]
 name = new plot0

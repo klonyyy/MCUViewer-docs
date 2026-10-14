@@ -1,0 +1,15 @@
+{
+  "image": "raw/GeneralSettings.png",
+  "output": "GeneralSettings/images/GeneralSettings.drawio",
+  "areas": [
+    {"rect": [4, 62, 890, 76]},
+    {"rect": [4, 174, 890, 102]},
+    {"rect": [4, 312, 890, 208]}
+  ],
+  "callouts": [
+    {"n": 1, "circle": [700, 75]},
+    {"n": 2, "circle": [700, 200]},
+    {"n": 3, "circle": [700, 390]}
+  ]
+}
+

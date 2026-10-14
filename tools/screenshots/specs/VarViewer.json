@@ -1,0 +1,18 @@
+{
+  "image": "raw/VarViewer.png",
+  "output": "VariableViewer/images/VarViewer.drawio",
+  "areas": [
+    {"rect": [8, 82, 552, 86]},
+    {"rect": [8, 170, 552, 472]},
+    {"rect": [14, 654, 198, 344]},
+    {"rect": [218, 654, 340, 344]},
+    {"rect": [568, 60, 752, 944]}
+  ],
+  "callouts": [
+    {"n": 1, "circle": [40, 99]},
+    {"n": 2, "circle": [258, 555]},
+    {"n": 3, "circle": [85, 855]},
+    {"n": 4, "circle": [362, 855]},
+    {"n": 5, "circle": [919, 535]}
+  ]
+}

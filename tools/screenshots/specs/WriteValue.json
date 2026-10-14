@@ -1,0 +1,8 @@
+{
+  "image": "raw/WriteValue.png",
+  "output": "VariableViewer/images/WriteValue.drawio",
+  "callouts": [
+    {"n": 1, "circle": [880, 178], "target": [800, 111]},
+    {"n": 2, "circle": [1050, 178], "target": [1000, 111]}
+  ]
+}

@@ -35,10 +35,14 @@ Minimum supported version is Windows 10.
 
 ### Linux
 
-Download the *.deb package and install it using:
-`sudo apt install ./MCUViewer-x.y.z-Linux.deb`
+MCUViewer for Linux is available as a *.deb package and as an AppImage.
 
-On Linux MCUViewer requires a valid gdb. Please install it if not already present. You can check if it works by typing `gdb --version` in your terminal window. 
+* *.deb package - download it and install using:
+`sudo apt install ./MCUViewer-x.y.z-Linux.deb`
+* AppImage - a single file that runs without installation on most distributions. Download it, make it executable and run it:
+`chmod +x MCUViewer-x.y.z-x86_64.AppImage && ./MCUViewer-x.y.z-x86_64.AppImage`
+
+The default *.elf parser uses the system gdb. The *.deb package installs it as a dependency - when using the AppImage please make sure it's present by typing `gdb --version` in your terminal window, or switch to the built-in DWARF parser (see {ref}`AcquisitionSettings`). 
 
 ```{note}
 Minimum supported version is Ubuntu 22.04 LTS. 
@@ -46,11 +50,15 @@ Minimum supported version is Ubuntu 22.04 LTS.
 
 ### MacOS
 
-Download the *.dmg package. Open it and drag and drop the MCUViewer app to Applications folder. If you're on ARM, you'll be propmted to install Rosetta when running the app. If the application does not run due to unverified source, make sure to allow it in the security preferences (Privacy & Security -> Security -> "Open Anyway"). 
+Download the *.dmg package matching your Mac - Apple Silicon (ARM) or Intel (x86). Open it and drag and drop the MCUViewer app to Applications folder. If the application does not run due to unverified source, make sure to allow it in the security preferences (Privacy & Security -> Security -> "Open Anyway"). 
 
 ```{note}
-Minimum supported version is MacOS 12 (Monterey).
+Minimum supported version is macOS 14 (Sonoma).
 ```
+
+## Project files
+
+MCUViewer projects are saved as *.mcuv files (`File -> Save` / `Save As...`, or automatically - see {ref}`GeneralSettings`). Projects created with MCUViewer 1.2.x (*.mcuvproj) can be opened directly - they are converted and saved as a *.mcuv file next to the original, which stays untouched.
 
 (QuickStartViewer)= 
 ## Quick Start - Variable Viewer
@@ -66,10 +74,10 @@ Your target should be connected to the debug probe using SWDIO, SWCLK, and GND p
 
 1. Select the `*.elf` file of your project in `Options->Acquisition`.  
 2. Choose the debug probe.  
-3. Close the `Options->Acquisition` window and click the `Import Variables` button.  
+3. Close the `Options->Acquisition` window and click the `Import variables` button.  
 4. Select the variables you want to visualize and click `Import`.  
-5. Drag and drop the selected variables onto the plot canvas.  
-6. Click the large `STOPPED` button to start data acquisition.
+5. Drag and drop the selected variables onto a plot.  
+6. Click the large `STOPPED` button (or press `Space`) to start data acquisition.
 
 In case of any errors make sure to visit {ref}`VariableViewer` and {ref}`FAQ`
 
@@ -86,9 +94,9 @@ The Trace Viewer module parses SWO trace data and displays the results in the fo
 Your target should be connected to the debug probe using the `SWDIO`, `SWCLK`, `SWO`, and `GND` pins.
 
 1. Switch to the `Trace Viewer` tab.  
-2. Select the debug probe in `Options → Acquisition`, then close the window.  
+2. Select the trace probe in `Options → Acquisition`, then close the window.  
 3. Enter your core frequency in kHz in the main window.  
-4. Select a trace prescaler - start with a relatively high value (e.g., ~20), as this depends heavily on your debug probe and SWD setup.  
+4. Select a trace prescaler - start with a relatively high value (e.g., ~20), as this depends heavily on your debug probe and SWD setup. The resulting SWO clock is shown below the prescaler.  
 5. In your code, place special markers:
 
 
@@ -122,7 +130,7 @@ MCUViewer is distributed under the EULA License. The license is available [onlin
 
 * Windows: `C:\Program Files\MCUViewer\bin`
 * Linux: `/usr/local/MCUViewer`
-* MacOS: `Applications/MCUViewer/Contents/Resources`
+* MacOS: `Applications/MCUViewer.app/Contents/Resources`
 
 ```{note}
 MCUViewer may not support all microcontroller targets. Users are responsible for verifying compatibility with their target device before purchase or deployment. 
@@ -141,6 +149,8 @@ In case of a bug, please provide the following information to make it easier to 
 3. Debug probe and target type
 4. Log file (log directory can be found in `Settings->General` window)
 5. Steps to reproduce, screenshots or videos of the issue
+
+If MCUViewer crashes, it offers to send a crash report the next time it is started. The report contains the crash details, the MCUViewer version, your OS version and an anonymous device id - sending it helps us fix the issue faster.
 
 
 

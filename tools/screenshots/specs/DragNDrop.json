@@ -1,0 +1,9 @@
+{
+  "image": "raw/DragNDrop.png",
+  "output": "VariableViewer/images/DragNDrop.drawio",
+  "paths": [
+    {"points": [[150, 332], [400, 240], [600, 150], [760, 118]]},
+    {"points": [[150, 332], [420, 420], [700, 560], [930, 560]]},
+    {"points": [[150, 332], [300, 460], [420, 680], [390, 840]]}
+  ]
+}
