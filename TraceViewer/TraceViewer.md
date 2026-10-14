@@ -92,7 +92,12 @@ When the `Trace Viewer` tab is active, the `Options->Acquisition` window holds t
 
 ## Setup
 
-First make sure that the SWO of your microcontroller is connected to the debug probe and that the GPIO pin of the SWO is correctly configured. 
+First make sure that the SWO of your microcontroller is connected to the debug probe and that the GPIO pin of the SWO is correctly configured. For example when configuring in CubeMX you have to select Debug as `Trace Asynchoronous Sw` like in the picture below.
+
+```{figure} ./images/SWOPinSetup.png
+:width: 1000px
+:align: center
+```
 
 In order to set up the trace viewer you need to place special "markers" in your code. These markers are simple register writes to the ITM (Instrumentation Trace Macrocell) peripheral. The values that have to be written differ based on plot you'd like to represent. 
 
