@@ -39,6 +39,15 @@ jobs:
         run: npm install -g jupyter-book
       - name: Build HTML Assets
         run: jupyter-book build --html
+      # mystmd writes http://localhost:3000 into sitemap.xml, robots.txt and the
+      # page data (jupyter-book/mystmd#2695), so search engines got a sitemap
+      # full of localhost URLs. Remove this step once that is fixed upstream.
+      - name: Fix localhost URLs
+        run: grep -rlZ 'http://localhost:3000' _build/html | xargs -0 -r sed -i 's#http://localhost:3000#https://docs.mcuviewer.com#g'
+      # GitHub Pages serves page/index.html at page/ and 301-redirects page to it, so list
+      # the final URLs - a sitemap of redirects shows up as "Page with redirect" in Search Console.
+      - name: Add trailing slashes to sitemap URLs
+        run: sed -i 's#<loc>\(https://docs.mcuviewer.com[^<]*[^/<]\)</loc>#<loc>\1/</loc>#' _build/html/sitemap.xml
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

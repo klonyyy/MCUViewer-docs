@@ -2,9 +2,9 @@
 version: 1
 project:
   id: c186f68a-da3b-4eb7-9930-e43138419094
-  # title:
-  # description:
-  # keywords: []
+  title: MCUViewer Documentation
+  description: User guide for MCUViewer - real-time variable plotting, SWO trace viewing and high-speed recording for STM32, C2000, RP2040 and other Cortex-M microcontrollers over ST-Link, J-Link, CMSIS-DAP or OpenOCD.
+  keywords: [MCUViewer, STM32, Cortex-M, real-time variable viewer, SWO, trace, ST-Link, J-Link, OpenOCD, C2000, RP2040, debugging]
   # authors: []
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
   toc:
