@@ -1,6 +1,7 @@
 # Introduction 
 
 MCUViewer is a non-intrusive GUI debugging tool for microcontrollers that allows quick visualization of variable values in real-time.
+It works with STM32, RP2040 and other Arm Cortex-M microcontrollers through ST-Link, J-Link or OpenOCD-compatible probes, and with practically any MCU - for example TI C2000 - over a serial port. Besides plotting variables in the [Variable Viewer](#VariableViewer), it can display high-frequency SWO data in the [Trace Viewer](#TraceViewer) and capture very fast signals with the [Recorder](#Recorder).
 
 ```{figure} ./images/VariableViewer.gif
 :width: 1000px

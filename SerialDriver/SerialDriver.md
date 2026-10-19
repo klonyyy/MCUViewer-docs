@@ -1,3 +1,6 @@
+---
+description: "Connect MCUViewer to any MCU over UART when the debug probe is not supported: serial driver setup for STM32 HAL and C2000, update rate tuning and profiling."
+---
 (SerialDriver)=
 # Serial Driver
 

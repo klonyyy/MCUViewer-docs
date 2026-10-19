@@ -1,4 +1,6 @@
-
+---
+description: "Connect AI coding assistants such as GitHub Copilot and Claude Code to MCUViewer through its built-in MCP server to analyze traces and control acquisition."
+---
 (MCPServer)=
 # AI Agent Integration
 

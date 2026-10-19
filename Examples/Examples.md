@@ -1,3 +1,6 @@
+---
+description: "Step-by-step MCUViewer setups: Raspberry Pi debug probe with an OpenOCD GDB server, TI C2000 over the serial driver, and STM32 with OpenOCD."
+---
 (Examples)=
 # Examples
 

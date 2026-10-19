@@ -1,4 +1,6 @@
-
+---
+description: "Configure acquisition in MCUViewer: *.elf file, sampling rate, debug probe (ST-Link, J-Link, GDB server or serial), recorder, logging and advanced options."
+---
 (AcquisitionSettings)=
 # Acquisition Settings
 

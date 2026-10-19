@@ -48,6 +48,9 @@ jobs:
       # the final URLs - a sitemap of redirects shows up as "Page with redirect" in Search Console.
       - name: Add trailing slashes to sitemap URLs
         run: sed -i 's#<loc>\(https://docs.mcuviewer.com[^<]*[^/<]\)</loc>#<loc>\1/</loc>#' _build/html/sitemap.xml
+      # Link previews (LinkedIn, Slack, ...) need an absolute og:image URL, mystmd writes /build/...
+      - name: Make preview image URLs absolute
+        run: find _build/html -name '*.html' -exec sed -i 's#\(<meta [a-z]*="\(og:\)\{0,1\}image" content="\)/#\1https://docs.mcuviewer.com/#g' {} +
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

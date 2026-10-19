@@ -1,3 +1,6 @@
+---
+description: "Read, write and plot MCU variables in real time from your *.elf file: variable import, fixed-point and enum interpretation, cursors, statistics and CSV export."
+---
 (VariableViewer)=
 # Variable Viewer
 

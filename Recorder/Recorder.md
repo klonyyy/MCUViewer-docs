@@ -1,3 +1,6 @@
+---
+description: "Capture very high-speed signals even over slow or isolated SWD links by adding the MCUViewer recorder module to your firmware, then plot the recorded data."
+---
 (Recorder)= 
 # Recorder 
 

@@ -1,4 +1,6 @@
-
+---
+description: "Connect MCUViewer to STM32 targets through OpenOCD and an ST-Link: keep OpenOCD from halting the target, set up the GDB server probe and flash firmware."
+---
 (STM32OpenOCDExample)=
 # STM32 and OpenOCD
 

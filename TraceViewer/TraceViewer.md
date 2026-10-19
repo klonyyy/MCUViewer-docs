@@ -1,3 +1,6 @@
+---
+description: "Collect high-frequency data from Cortex-M cores over SWO: profile interrupts and plot digital and analog signals with almost no runtime overhead."
+---
 (TraceViewer)=
 # Trace Viewer
 

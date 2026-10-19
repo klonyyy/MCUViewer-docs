@@ -1,4 +1,6 @@
-
+---
+description: "Use the Raspberry Pi debug probe with MCUViewer through an OpenOCD GDB server: Variable Viewer and Recorder setup for a Raspberry Pi Pico (RP2040)."
+---
 (RaspberryPi_debug_probe_GDBServer_example)=
 # Raspberry Pi debug probe and GDBServer 
 

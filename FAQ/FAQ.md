@@ -1,3 +1,6 @@
+---
+description: "Answers to common MCUViewer questions about licensing, Variable Viewer, Recorder and Trace Viewer, plus known issues and limitations."
+---
 (FAQ)=
 # FAQ 
 

@@ -1,4 +1,6 @@
-
+---
+description: "Flash firmware directly from MCUViewer with a custom command for J-Link, STM32CubeProgrammer or any other tool, and test the command before use."
+---
 (Flashing)=
 # Flashing
 

@@ -1,3 +1,6 @@
+---
+description: "MCUViewer application settings: project auto save, log directory, float precision, plot export to PNG and license activation (offline, perpetual, seat-based)."
+---
 (GeneralSettings)=
 # General Settings
 
