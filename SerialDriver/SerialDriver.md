@@ -58,6 +58,7 @@ void serialDriverSendData(uint16_t* buf, uint16_t size)     // <-------
 After that, open the {ref}`AcquisitionSettings` window, and select `SERIAL` as the debug probe (1), the serial port (2), and the baud rate (3). If the port is not listed, connect the converter and click the refresh button next to it. The baud rate must match the one configured on the target.
 
 ```{figure} ./images/SerialDriver.png
+:alt: Acquisition Settings with the SERIAL probe, serial port and baud rate selected
 :width: 1000px
 :align: center
 ```
@@ -67,6 +68,7 @@ Next make sure the target is connected, powered on and click the `Detect serial`
 Make sure no other program (e.g. a serial terminal) keeps the port open.
 
 ```{figure} ./images/SerialDriverDetected.png
+:alt: Acquisition Settings showing the serial driver detected on the target
 :width: 1000px
 :align: center
 ```
@@ -84,6 +86,7 @@ When observing update rate issues first make sure your USB to UART converter is 
 Please follow the gif below and change your converter's settings in the device manager: 
 
 ```{figure} ./images/Speedup.gif
+:alt: Changing the USB to UART converter settings in Windows Device Manager to raise the update rate
 :width: 1000px
 :align: center
 ```
@@ -114,6 +117,7 @@ There are two instances of MCUViewer:
 * Second with TraceViewer and JLink used as the debug probe (right side of the screen).
 
 ```{figure} ./images/Setup.png
+:alt: Two MCUViewer instances: one sampling a variable over the serial driver, one profiling it with the Trace Viewer
 :width: 1000px
 :align: center
 ```
@@ -144,6 +148,7 @@ Let's see that on the TraceViewer plots below:
 
 
 ```{figure} ./images/Profiling.png
+:alt: Trace Viewer plots of serial driver packets sent at around 1 kHz
 :width: 1000px
 :align: center
 ```
@@ -151,6 +156,7 @@ Let's see that on the TraceViewer plots below:
 We can clearly see the packets of data sent with around 1kHz - the sampling frequency set in MCUViewer that uses the serial probe. Let's zoom in:
 
 ```{figure} ./images/ProfilingZoom.png
+:alt: Zoomed-in Trace Viewer plot of a single serial driver packet
 :width: 1000px
 :align: center
 ```

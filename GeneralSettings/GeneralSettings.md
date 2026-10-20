@@ -7,6 +7,7 @@ description: "MCUViewer application settings: project auto save, log directory, 
 General settings window is used to control application settings. Open by selecting `Settings->General` from the top menu.
 
 ```{figure} ./images/GeneralSettings.png
+:alt: MCUViewer General Settings window
 :width: 1000px
 :align: center
 ```
@@ -46,6 +47,7 @@ Before purchasing an online seat-based license please test the server connection
 2. Make sure the status shows `VALID` 
 
 ```{figure} ./images/GeneralSettingsOfflineLicense.png
+:alt: Offline license activation in General Settings with a valid *.lic license file
 :width: 1000px
 :align: center
 ```
@@ -65,6 +67,7 @@ Before purchasing an online seat-based license please test the server connection
 The `License seats` section also shows the last server sync time (click `Sync` to refresh it). Tick `Take seat automatically` to take a free seat each time MCUViewer is opened.
 
 ```{figure} ./images/GeneralSettingsOnlineLicense.png
+:alt: Seat-based online license section in General Settings with the last server sync time
 :width: 1000px
 :align: center
 ```

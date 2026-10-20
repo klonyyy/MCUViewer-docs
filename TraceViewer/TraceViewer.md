@@ -18,6 +18,7 @@ Trace Viewer window consists of four main parts:
 4. [Channels canvas](#ChannelsCanvas) - plots are drawn here.
 
 ```{figure} ./images/TraceViewer.png
+:alt: MCUViewer Trace Viewer window with the control panel, indicators, channel list and plots
 :width: 1000px
 :align: center
 ```
@@ -39,6 +40,7 @@ Currently the trace trigger operation is limited to basic functionality. If more
 ```
 
 ```{figure} ./images/TraceViewerControlPanel.png
+:alt: Trace Viewer control panel
 :width: 1000px
 :align: center
 ```
@@ -49,6 +51,7 @@ Currently the trace trigger operation is limited to basic functionality. If more
 Indicators show the status of the trace and any errors that might have occurred. If the `Core frequency` or `Trace prescaler` are incorrect, or there is too much data on the SWO line, the trace peripheral will indicate delayed frames or error frames. Having multiple `Error frames`, `Delayed timestamp 2` or `Delayed timestamp 3` frames may indicate that the trace bandwidth is not sufficient for the data being pushed. These frames are depicted with red (error frames) or yellow (delayed timestamp 3 frames) crosses on the plot, and the data around them should be ignored. When the error frames pile up, the trace is stopped with a `Too many error frames!` message - increase the trace prescaler or disable some of the channels.
 
 ```{figure} ./images/TraceErrors.png
+:alt: Trace Viewer indicators with error and delayed frame counters
 :width: 1000px
 :align: center
 ```
@@ -67,6 +70,7 @@ The channels list allows you to select channels and access their quick settings.
 Each channel can additionally display a statistics window and cursors (`X`, `Y` or `X+Y` for analog channels), which work the same way as in the {ref}`VariableViewer`.
 
 ```{figure} ./images/TraceViewerChannels.png
+:alt: Trace Viewer channel list with per-channel settings
 :width: 1000px
 :align: center
 ```
@@ -89,15 +93,17 @@ When the `Trace Viewer` tab is active, the `Options->Acquisition` window holds t
 - `Log to file` - logs the trace data to a *.csv file, see {ref}`Logging`.
 
 ```{figure} ./images/TraceAcquisitionSettings.png
+:alt: Trace acquisition settings with the core frequency, trace prescaler and probe
 :width: 1000px
 :align: center
 ```
 
 ## Setup
 
-First make sure that the SWO of your microcontroller is connected to the debug probe and that the GPIO pin of the SWO is correctly configured. For example when configuring in CubeMX you have to select Debug as `Trace Asynchoronous Sw` like in the picture below.
+First make sure that the SWO of your microcontroller is connected to the debug probe and that the GPIO pin of the SWO is correctly configured. For example when configuring in CubeMX you have to select Debug as `Trace Asynchronous Sw` like in the picture below.
 
 ```{figure} ./images/SWOPinSetup.png
+:alt: STM32CubeMX Debug option set to Trace Asynchronous Sw to enable the SWO pin
 :width: 1000px
 :align: center
 ```
@@ -119,7 +125,7 @@ where x is the channel number in MCUViewer.
 Displaying value of `a` variable as a function of time:
 ```c
 float a = sin(10.0f * i);          // some high frequency signal to trace
-ITM->PORT[x].u32 = *(uint32_t*)&a; // type-punn to desired size: sizeof(float) = sizeof(uint32_t)
+ITM->PORT[x].u32 = *(uint32_t*)&a; // type-pun to the desired size: sizeof(float) = sizeof(uint32_t)
 ```
 or
 

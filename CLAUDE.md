@@ -32,6 +32,9 @@ UI strings (window titles, tooltips, labels) are literals in those files - grep 
 ## Conventions
 
 - Markdown files use LF line endings; images are referenced with MyST `{figure}` blocks at `:width: 1000px`.
+  Every figure has an `:alt:` line describing what it shows - search engines and AI crawlers only see that text.
+- `tools/postprocess_site.py` runs on the build in `deploy.yml`: canonical/og:url tags, removal of the BASE_URL
+  fallback dialog, and `llms.txt` / `llms-full.txt` generated from the pages in `myst.yml` order.
 - Annotated images: yellow numbered circles with a line to the control, numbered in the order the page text uses.
   The `.drawio` next to an image is generated - change the spec in `tools/screenshots/specs`, not the `.drawio`.
 - `example_project/example.mcuv` is the project all screenshots are taken with (its *.elf path points into

@@ -7,6 +7,7 @@ description: "Flash firmware directly from MCUViewer with a custom command for J
 The Flashing window lets you configure a custom command used to flash your firmware directly from MCUViewer. Open it by selecting `Options -> Flashing` from the top menu.
 
 ```{figure} ./images/Flashing.png
+:alt: MCUViewer Flashing window with a custom flash command
 :width: 1000px
 :align: center
 ```

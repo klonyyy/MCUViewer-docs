@@ -51,6 +51,9 @@ jobs:
       # Link previews (LinkedIn, Slack, ...) need an absolute og:image URL, mystmd writes /build/...
       - name: Make preview image URLs absolute
         run: find _build/html -name '*.html' -exec sed -i 's#\(<meta [a-z]*="\(og:\)\{0,1\}image" content="\)/#\1https://docs.mcuviewer.com/#g' {} +
+      # Canonical and og:url tags, no BASE_URL fallback dialog in the page text, llms.txt and llms-full.txt.
+      - name: Post-process HTML for search engines and AI crawlers
+        run: python3 tools/postprocess_site.py _build/html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

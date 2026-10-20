@@ -4,6 +4,7 @@ MCUViewer is a non-intrusive GUI debugging tool for microcontrollers that allows
 It works with STM32, RP2040 and other Arm Cortex-M microcontrollers through ST-Link, J-Link or OpenOCD-compatible probes, and with practically any MCU - for example TI C2000 - over a serial port. Besides plotting variables in the [Variable Viewer](#VariableViewer), it can display high-frequency SWO data in the [Trace Viewer](#TraceViewer) and capture very fast signals with the [Recorder](#Recorder).
 
 ```{figure} ./images/VariableViewer.gif
+:alt: MCUViewer Variable Viewer plotting microcontroller variables in real time
 :width: 1000px
 :align: center
 ```
@@ -65,6 +66,7 @@ MCUViewer projects are saved as *.mcuv files (`File -> Save` / `Save As...`, or 
 ## Quick Start - Variable Viewer
 
 ```{figure} ./images/VarViewerWhite.png
+:alt: MCUViewer Variable Viewer with the variable table, plot group tree and live plots
 :width: 1000px
 :align: center
 ```
@@ -86,6 +88,7 @@ In case of any errors make sure to visit {ref}`VariableViewer` and {ref}`FAQ`
 ## Quick Start - Trace Viewer
 
 ```{figure} ./images/TraceViewerWhite.png
+:alt: MCUViewer Trace Viewer showing SWO trace channels
 :width: 1000px
 :align: center
 ```
@@ -110,7 +113,7 @@ ITM->PORT[x].u8 = 0xbb; //exit tag 0xbb - plot state low
 And for tracing "analog" signals you can use: 
 ```c
 float a = sin(10.0f * i);          // some high frequency signal to trace
-ITM->PORT[x].u32 = *(uint32_t*)&a; // type-punn to desired size: sizeof(float) = sizeof(uint32_t)
+ITM->PORT[x].u32 = *(uint32_t*)&a; // type-pun to the desired size: sizeof(float) = sizeof(uint32_t)
 ```
 or
 

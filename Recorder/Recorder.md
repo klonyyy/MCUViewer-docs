@@ -7,6 +7,7 @@ description: "Capture very high-speed signals even over slow or isolated SWD lin
 The recorder module allows visualization of very high-speed signals, even on low-cost targets or when SWD communication speed is limited due to galvanic isolators or long cables. It is more intrusive than using a sampling group, as it must be compiled into your project-although the runtime penalty is usually minimal.
 
 ```{figure} ./images/RecorderDemo.gif
+:alt: MCUViewer Recorder capturing a high-speed signal with a trigger
 :width: 1000px
 :align: center
 ```
@@ -30,6 +31,7 @@ The recorder module allows visualization of very high-speed signals, even on low
 In case of errors please first see the {ref}`FAQ` section and {ref}`Examples` section.
 
 ```{figure} ./images/RecorderSettings.png
+:alt: Recorder settings in the Acquisition Settings window
 :width: 1000px
 :align: center
 ```
@@ -50,6 +52,7 @@ The recorder settings are shown in the plot settings panel of a recorder group:
 7. `Pretrigger drag line` - use to set up the amount of pre-trigger data. If not visible, double-left-click on plot area to adjust zoom.
 
 ```{figure} ./images/RecorderUsage.png
+:alt: Recorder plot with the trigger level and pretrigger drag lines
 :width: 1000px
 :align: center
 ```

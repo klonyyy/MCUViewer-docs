@@ -15,6 +15,7 @@ Variable Viewer window consists of five main parts:
 5. [Plot area](#PlotCanvas) - plots are drawn here, each in its own dockable window
 
 ```{figure} ./images/VarViewer.png
+:alt: MCUViewer Variable Viewer window with the control panel, variable table, plot group tree, plot settings and plot area
 :width: 1000px
 :align: center
 ```
@@ -46,6 +47,7 @@ There are two ways to add variables to the table:
 2. Right-click in the empty variable table area and select `New -> Variable`. Set the name manually and close the window. This option can be used if your variable is not listed in the import dialog.
 
 ```{figure} ./images/AddVariable.png
+:alt: Importing variables from the *.elf file into the variable table
 :width: 1000px
 :align: center
 ```
@@ -57,6 +59,7 @@ Variables that cannot be found in the *.elf file are shown with a red `NOT FOUND
 You can see each variable's settings by double clicking it or by right clicking and selecting `Properties`.
 
 ```{figure} ./images/VariableProperties.png
+:alt: Variable properties window
 :width: 1000px
 :align: center
 ```
@@ -85,6 +88,7 @@ In some cases, it may be necessary to read a predefined address, for example, in
 The `Postprocessing` section can be used to extract specific bits from a variable. This is useful, for example, when reading error flags.
 
 ```{figure} ./images/ErrorBits.png
+:alt: Variable postprocessing settings extracting error bits
 :width: 1000px
 :align: center
 ```
@@ -109,6 +113,7 @@ Right now, interpreted variables cannot be easily distinguished from the origina
 ```
 
 ```{figure} ./images/Fractional.png
+:alt: Variable interpretation settings for a fixed-point (fractional) value
 :width: 1000px
 :align: center
 ```
@@ -159,6 +164,7 @@ Each plot has a checkbox that shows or hides it. Right-click a plot to add a new
 Plot properties can be accessed by double-clicking the plot name, by right-clicking it and selecting `Properties`, or by right-clicking the plot itself and selecting `Plot properties`.
 
 ```{figure} ./images/PlotSettings.png
+:alt: Plot properties window
 :width: 1000px
 :align: center
 ```
@@ -179,6 +185,7 @@ Bar and XY plots are not available in recorder groups. Depending on the type, ad
 When new plots are added they are empty. One can drag and drop the variables from the variable table onto a plot (or onto the plot variable list) to add them.
 
 ```{figure} ./images/DragNDrop.png
+:alt: Dragging a variable from the variable table onto a plot
 :width: 1000px
 :align: center
 ```
@@ -193,6 +200,7 @@ The plot settings panel provides quick-access settings for the currently selecte
 Cursors allow to measure signal properties like on an oscilloscope. They are available for curve and XY plots when the acquisition is stopped.
 
 ```{figure} ./images/Cursors.png
+:alt: Curve plot with measurement cursors
 :width: 1000px
 :align: center
 ```
@@ -207,6 +215,7 @@ Cursors allow to measure signal properties like on an oscilloscope. They are ava
 Statistics window allows to display statistics for the currently selected curve plot when the acquisition is stopped.
 
 ```{figure} ./images/Statistics.png
+:alt: Statistics window for the selected curve plot
 :width: 1000px
 :align: center
 ```
@@ -244,6 +253,7 @@ Right-click on a plot to open its context menu:
 Table plot type can be used to read (1) and write (2) a variable value. Right clicking on the read field (1) allows to change the display format to decimal, hexadecimal or binary. The address column and a secondary write column can be enabled in {ref}`PlotProperties`.
 
 ```{figure} ./images/WriteValue.png
+:alt: Table plot reading and writing a variable value
 :width: 1000px
 :align: center
 ```

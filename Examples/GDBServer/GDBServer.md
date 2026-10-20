@@ -45,6 +45,7 @@ this way we should be able to see a sine wave when we import sin_x in MCUViewer.
 5. Start a new MCUViewer project, select the *.elf file and select GDB server as debug probe. Put the ip address 127.0.0.1 and port 3333 in the GDB server settings and close the window. 
 
 ```{figure} ./images/settings.png
+:alt: MCUViewer Acquisition Settings with the GDB server probe at 127.0.0.1, port 3333
 :width: 800px
 :align: center
 ```
@@ -58,6 +59,7 @@ this way we should be able to see a sine wave when we import sin_x in MCUViewer.
 Note that we are using the copy of target config from step 1. This command should connect the probe to the target without halting it.
 
 ```{figure} ./images/openOCD.png
+:alt: OpenOCD connected to the RP2040 through the Raspberry Pi Debug Probe without halting the target
 :width: 1000px
 :align: center
 ```
@@ -65,6 +67,7 @@ Note that we are using the copy of target config from step 1. This command shoul
 8. Start the acquisition in MCUViewer - you should see the sine wave.
 
 ```{figure} ./images/varViewerSineGif.gif
+:alt: Sine wave from the Raspberry Pi Pico plotted live in the Variable Viewer
 :width: 1000px
 :align: center
 ```
@@ -157,6 +160,7 @@ Sometimes Variable Viewer sampling rate is not stable enough, especially when hi
 * recorderDefines.h
 
 ```{figure} ./images/recorder.png
+:alt: Recorder directory with recorder.h and recorderDefines.h
 :width: 200px
 :align: center
 ```
@@ -230,6 +234,7 @@ Remember to modify the `recorderDefines.h` file to match your system configurati
 6. If the recorder is detected correctly there should be no errors, just a `Recorder detected!` information with all fields filled in as in the `recorderDefines.h` file.
 
 ```{figure} ./images/recorderDetect.png
+:alt: Acquisition Settings showing the recorder detected on the Raspberry Pi Pico
 :width: 800px
 :align: center
 ```
@@ -241,6 +246,7 @@ Remember to modify the `recorderDefines.h` file to match your system configurati
 9. Start the acquisition and you should see the sine wave with much more detail and higher sampling rate. 
 
 ```{figure} ./images/recorderSineGif.gif
+:alt: Recorder plot of the Raspberry Pi Pico sine wave at a high sampling rate
 :width: 1000px
 :align: center
 ```

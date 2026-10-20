@@ -23,6 +23,7 @@ The general section holds general settings for the acquisition.
 All samples of an acquisition run are kept, so after stopping you can pan and zoom through the whole run. To stream the data to a file use {ref}`Logging`.
 
 ```{figure} ./images/AcquisitionGeneral.png
+:alt: General section of the MCUViewer Acquisition Settings window with the *.elf file and sampling frequency
 :width: 1000px
 :align: center
 ```
@@ -50,6 +51,7 @@ The window below presents J-Link settings, as ST-Link setup is more straightforw
 9. `Wait for target` - if checked, after pressing `START` MCUViewer keeps retrying until the debug probe and the target are connected instead of failing immediately. The main button shows `WAITING FOR TARGET` in the meantime. Useful when the target is powered on or plugged in after starting the acquisition.
 
 ```{figure} ./images/AcquisitionDebugProbe.png
+:alt: Debug probe section of the Acquisition Settings window with the probe type, serial number and SWD speed
 :width: 1000px
 :align: center
 ```
@@ -118,6 +120,7 @@ Logging can decrease the performance when using high frequency sampling. Logging
 3. `MCP server port` - preferred port of the built-in MCP server used by AI agents. See {ref}`MCPServer`.
 
 ```{figure} ./images/AcquisitionAdvanced.png
+:alt: Advanced section of the Acquisition Settings window with the *.elf parser and GDB command
 :width: 1000px
 :align: center
 ```
